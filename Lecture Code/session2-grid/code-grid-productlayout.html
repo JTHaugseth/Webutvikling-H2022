@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation bar</title>
+	<link rel="stylesheet" type="text/css" href="css/code-flex-assignment-navbar.css">
+  <style>
+      .sort {
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      .collection-sort {
+        display: flex;
+        flex-direction: column;
+        flex: 1 50%;
+        padding: 10px;
+        background-color: gray;
+        margin: 10px;
+      }
+      .collection-sort select {
+        padding: 6px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .collection-sort label {
+        padding: 6px;
+        font-size: 20px;
+        border: none;
+      }
+      .product-card {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2,1fr); /* Two rows */
+        padding: 50px;
+      } 
+      .product-image {
+        padding: 10px;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+      }
+
+      .product-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+  </style>
+</head>
+<body>
+  <body>    
+      <div class="sort">    
+        <div class="collection-sort">
+          <label>Filter by:</label>
+          <select>
+            <option value="/">All Jackets</option>
+          </select>
+        </div>
+    
+        <div class="collection-sort">
+          <label>Sort by:</label>
+          <select>
+            <option value="/">Featured</option>
+          </select>
+        </div>    
+      </div>
+      <section class="product-card">
+        <div class="product-image">
+          <img src="productcatalog/winterJacket1.png" alt="winterJacket1">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket2.png" alt="winterJacket2">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket3.png" alt="winterJacket3">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket4.png" alt="winterJacket4">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket5.png" alt="winterJacket5">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket6.png" alt="winterJacket6">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket7.png" alt="winterJacket7">
+        </div>
+        <div class="product-image">
+          <img src="productcatalog/winterJacket8.png" alt="winterJacket8">
+        </div>
+      </section>
+  </body>
+
+</body>
+</html>
+

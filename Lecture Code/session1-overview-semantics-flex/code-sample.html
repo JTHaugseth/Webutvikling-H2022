@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning HTML/CSS</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <style>
+      *{
+        box-sizing: border-box;
+      }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  header {
+    background-color: grey;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+  footer {
+    background-color: gray;
+    text-align: center;
+    padding: 2px;
+  }
+  
+/*  nav {
+  float: left;
+  width: 25%;
+}
+article {
+  float: left;
+  width: 75%;
+}
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+ 
+/* section {
+  display: flex;
+}
+nav {
+  flex: 1
+}
+article {
+  flex: 3;
+}  */
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px;
+  } 
+  article > p {
+    color: blue;
+  }
+
+/*   section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px;
+    grid-template-areas: 
+    "nav article article article";
+  }
+  nav {
+    grid-area: nav;
+  }
+  article {
+    grid-area: article;
+  } */
+  </style>
+</head>
+
+<body>    
+<header>
+  <h2>A Startup Company</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><a ref="#">Home</a></li>
+      <li><a ref="#">Products</a></li>
+      <li><a ref="#">About</a></li>
+      <li><a ref="#">Contact</a></li>
+    </ul>
+  </nav>
+  <article>
+    <h2>QBank - A FinTech Company</h2>
+    <p>QBank aims at providing virtual service to digital customers</p>
+  </article>
+</section>
+<footer>
+  <p>Contact info: HansaParken Student Incubation Center</p>
+</footer>
+</body>
+
+</html>
+

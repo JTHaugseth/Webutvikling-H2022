@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Grid</title>
+    <!-- Better understand the grid -->  
+    <!-- Better understand the difference between grid and Flex -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+       
+        body{
+            margin: 10px;
+        }
+        .main-wrapper{
+            display: grid;
+            /* 1fr doesn't matter here*/
+            grid-template-columns: repeat(3, 200px);
+            /*1fr is not working here*/
+            grid-template-rows: repeat(2, 100px);
+            gap: 10px;
+            align-items: flex-end;
+            background-color:lightcyan;
+            height: 300px;
+        }
+        #item1 {
+            background-color: #8cffa0;
+            align-self: flex-start;
+        }
+        #item2 {
+            background-color: #a0c8ff;
+        }
+        #item3 {
+            background-color: #ffa08c;
+        }
+        #item4 {
+            background-color: #ffff8c;
+        }
+        #item5 {
+            background-color: #ff8cff;
+        }
+        #item6 {
+            background-color: #8cffff;
+        }
+        .main-wrapper div{
+            border: 1px solid white; /* #FFFFFF, #FFF, rgb(255, 255, 255) */
+            color: black;
+            font-size: 30px;
+            text-align: center;
+        }
+        /* .main-wrapper--fill {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+        .main-wrapper--fit {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        } */
+        /*
+        justify-content: center;
+            align-content:center; 
+*/
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div id="item1">item1</div>
+        <div id="item2">item2</div>
+        <div id="item3">item3</div>
+        <div id="item4">item4</div>
+        <div id="item5">item5</div>
+        <div id="item6">item6</div> 
+    </div> 
+    
+</body>
+</html>

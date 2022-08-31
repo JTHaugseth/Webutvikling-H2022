@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation bar</title>
+	<link rel="stylesheet" type="text/css" href="css/code-flex-assignment-navbar.css">
+  <style>
+    .expander {
+      float: left;
+      background: pink;
+      height: 200px;
+      min-width: 100px;
+      margin-right: 10px;
+      padding: 5px;
+      resize: both;
+      overflow: auto;
+    }
+    /*you need to set height for flex-flow:column wrap work*/
+    .flex-container {
+      display: flex;
+      flex-flow: column wrap; 
+      height: 200px;  
+      align-items: flex-end;
+      background-color: #8c8c8c;
+    }
+    .flex-container > div {
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      font-size: 30px;
+      background-color: aqua;
+    }
+    /*you need to set flex-flow:row wrap*/
+    #item1 {
+      background-color: #8cffa0;
+/*       flex: 1; 
+      align-self: start; */
+    }
+    #item2 {
+      background-color: #a0c8ff;
+/*       flex-grow: 1;
+      flex-shrink: 1;
+      align-self: stretch; */
+    }
+    #item3 {
+      background-color: #ffa08c;
+/*       flex-grow: 0;
+      flex-shrink: 0; */
+    }
+
+    #item4 {
+      background-color: #ffff8c;
+/*       flex-grow: 0; */
+    }
+
+    #item5 {
+      background-color: #ff8cff;
+/*       flex-grow: 0; */
+    }
+
+    #item6 {
+      background-color: #8cffff;
+/*       flex-grow: 0; */
+    }
+  </style>
+</head>
+<body>
+  <body>    
+    <div class="expander">Drag me wider</div>
+    <div class="flex-container">
+      <div id="item1">1</div>
+      <div id="item2">2</div>
+      <div id="item3">3</div>
+      <div id="item4">4</div>
+      <div id="item5">5</div>
+      <div id="item6">6</div>
+    </div>
+  </body>
+
+</body>
+</html>

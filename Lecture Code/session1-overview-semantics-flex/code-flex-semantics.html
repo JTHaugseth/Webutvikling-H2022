@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation bar</title>
+	<link rel="stylesheet" type="text/css" href="css/code-flex-assignment-navbar.css">
+  <style>
+    .wrapper {
+      text-align: center;
+      font-weight: bold;
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .wrapper > * {
+      flex: 1 100%;
+    }
+    .aside-1 { 
+      flex: 1; 
+      order: 1; 
+    }
+    .main { 
+      flex: 3; 
+      order: 2; 
+    }
+    .aside-2 { 
+      flex: 1;
+      order: 3; 
+    }
+    .footer {
+      order: 4;
+    }
+        
+    .header {
+      background: tomato;
+    }
+    .footer {
+      background: lightgreen;
+    }
+    .main {
+      background: deepskyblue;
+    }
+    .aside-1 {
+      background: gold;
+    }
+    .aside-2 {
+      background: hotpink;
+    }
+
+    body {
+      padding: 2em; 
+    }
+  </style>
+</head>
+
+  <body>    
+    <div class="wrapper">
+      <header class="header">Header</header>
+      <article class="main">
+        <p>Web development is a course that gives students experience with frontend and backend technologies, as well as provides knowledge and insight into, among other things, Universal Design (UU) and usability.
+        In the frontend part, students will learn both the basic techniques in web development with regard to HTML, CSS and JavaScript, as well as be able to use libraries and frameworks. In the backend part, the focus is on creating an API with a database that can be consumed from the frontend. One should create responsive web applications that ensures the interests of a user (ref. UU and usability).</p>  
+      </article>
+      <aside class="aside aside-1">Aside 1</aside>
+      <aside class="aside aside-2">Aside 2</aside>
+      <footer class="footer">Footer</footer>
+    </div>
+  </body>
+
+</html>
