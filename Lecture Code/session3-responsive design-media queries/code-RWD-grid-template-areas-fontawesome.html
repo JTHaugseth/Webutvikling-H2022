@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Banner three parts</title>
+    <!-- Using the grid areas to create a complex layout -->
+    
+    <!-- CDN to Font Awesome for icons -->    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- Random pics: https://source.unsplash.com/random/200x200 -->
+    
+    <style>
+        .main-ad{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+                "big-ad big-ad"
+                "big-ad big-ad"
+                "small-ad-a small-ad-b";
+        }
+        @media only screen and (min-width: 600px) {
+            /* For tablets and desktop: */
+            .main-ad {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: 
+                "big-ad big-ad small-ad-a"
+                "big-ad big-ad small-ad-b";
+            }
+        }
+                
+        .big-ad{
+            grid-area: big-ad;
+            background-color: rgb(255, 53, 71);
+            height: 300px;
+            background-image: url(images/banner2.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .small-ad-a{
+            grid-area: small-ad-a;
+            background-color: rgb(51, 181, 229);         
+        }
+        
+        .small-ad-b{
+            grid-area: small-ad-b;
+            background-color: rgb(0, 200, 81);
+        }
+            
+        /* these two lines locate the icon in the center */
+         .ad-with-icon{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+       
+        .ad-with-icon{
+            color: #fff;
+            font-size: 4rem;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <aside class="main-ad">
+            
+            <section class="big-ad">
+                <h3>Want to travel?</h3>
+            </section>
+            
+            <section class="small-ad-a ad-with-icon">
+                <i class="fa fa-bed"></i>
+            </section>
+            
+            <section class="small-ad-b ad-with-icon">
+                <i class="fa fa-home"></i>
+            </section>
+            
+        </aside>
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
