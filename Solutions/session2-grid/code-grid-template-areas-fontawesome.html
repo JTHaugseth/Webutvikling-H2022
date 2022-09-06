@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner three parts</title>
     <!-- Using the grid areas to create a complex layout -->
     
@@ -20,16 +19,7 @@
                 "big-ad big-ad"
                 "small-ad-a small-ad-b";
         }
-        @media only screen and (min-width: 600px) {
-            /* For tablets and desktop: */
-            .main-ad {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-areas: 
-                "big-ad big-ad small-ad-a"
-                "big-ad big-ad small-ad-b";
-            }
-        }
-                
+
         .big-ad{
             grid-area: big-ad;
             background-color: rgb(255, 53, 71);

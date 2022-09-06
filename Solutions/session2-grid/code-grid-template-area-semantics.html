@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Grid</title>
+    <!-- Better understand the grid -->  
+    <!-- Better understand the difference between grid and Flex -->
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body{
+        margin: 10px;
+    }
+    
+    .main-wrapper{
+        display: grid;
+        grid-template-columns: repeat(5, 150px);
+        grid-template-rows: 50px 300px 50px;
+        grid-template-areas: 
+        "header header header header header"
+        "aside1 main main main aside2"
+        "footer footer footer footer footer";
+    }
+    .header {
+        grid-area: header;
+        background: tomato;
+    }
+    .footer {
+        grid-area: footer;
+        background: lightgreen;
+    }
+    .main {
+        grid-area: main;
+        background: deepskyblue;
+    }
+    .aside-1 {
+        grid-area: aside1;
+        background: gold;
+    }
+    .aside-2 {
+        grid-area: aside2;
+        background: hotpink;
+    }
+    .main-wrapper >*{
+        border: 1px solid white; /* #FFFFFF, #FFF, rgb(255, 255, 255) */
+        color: black;
+        font-size: 16px;
+        text-align: center;
+        padding: 30px;
+    }        
+        
+    </style>
+</head>
+<body>    
+    <div class="main-wrapper">
+      <header class="header">Header</header>
+      <article class="main">
+        <p>Web development is a course that gives students experience with frontend and backend technologies, as well as provides knowledge and insight into, among other things, Universal Design (UU) and usability.
+        In the frontend part, students will learn both the basic techniques in web development with regard to HTML, CSS and JavaScript, as well as be able to use libraries and frameworks. In the backend part, the focus is on creating an API with a database that can be consumed from the frontend. One should create responsive web applications that ensures the interests of a user (ref. UU and usability).</p>  
+      </article>
+      <aside class="aside-1">Aside 1</aside>
+      <aside class="aside-2">Aside 2</aside>
+      <footer class="footer">Footer</footer>
+    </div>
+  </body>
+</html>
