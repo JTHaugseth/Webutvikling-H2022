@@ -27,7 +27,7 @@
             .col-s-10 {width: 83.33%;}
             .col-s-11 {width: 91.66%;}
             .col-s-12 {width: 100%;} 
-        }
+        } 
         @media only screen and (min-width: 768px) {
             /* For desktop: */
             .col-1 {width: 8.33%;}
@@ -43,6 +43,24 @@
             .col-11 {width: 91.66%;}
             .col-12 {width: 100%;} 
         }
+        @media only screen and (min-width: 768px) {
+            .accounts {
+                grid-template-columns: repeat(4, 160px);
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .accounts {
+                grid-template-columns: repeat(2, 160px);
+                grid-template-rows: repeat(2, 160px);
+                margin: 20px;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .accounts {
+                grid-template-rows: repeat(4, 160px);
+                grid-template-columns: 160px;   
+            }
+        }
         header {    
             text-align: center;
             font-size: 40px;
@@ -56,25 +74,25 @@
         .Profile {
             text-align: center;
             border: solid 1px white;
-            width: 180px;
+            min-width: 180px;
             border-radius: 5px;
         }
         .Profile:hover{
             transform: scale(1.1);
+
         }
         .nav > div {
             height: auto;
             max-width: 200px;
         }
-        .nav-logo > img{
+        .nav-logo > img {
             object-fit: cover;
             height: 100%;
             width: 100%;
         }
         .accounts {
             display: grid;
-            grid-template-columns: repeat(4, 160px);
-            gap: 30px;
+            gap: 50px;
             justify-content: center;
             align-items: center;
             margin-bottom: 70px;
@@ -96,8 +114,10 @@
         }
         .individualAccount > p {
             text-align: center;
+            
         }     
 
+        
     </style>
 
 </head>
@@ -127,11 +147,12 @@
             <p>Wo Lee </p>
         </div>
         
+        
 
  </section>
  <footer>
     <div class="Profile">
-        <h4>Manage Profiles</h4>
+        <h4>Manage Profiles<a href="/Prosjekter/index.html"</h4>
     </div>
     
  </footer>
