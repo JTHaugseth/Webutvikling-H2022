@@ -9,8 +9,9 @@
     <style>
         * {
             box-sizing: border-box;
-        }
-        body{ background-color: rgb(20, green, blue);
+            color: white;
+            font-family: 'arial'; font-size: 15px;
+            background-color: rgb(20, 20, 20);
         }
         @media only screen and (min-width: 600px) {
             /* For tablets: */
@@ -42,21 +43,98 @@
             .col-11 {width: 91.66%;}
             .col-12 {width: 100%;} 
         }
+        header {    
+            text-align: center;
+            font-size: 40px;
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+        }
+        .Profile {
+            text-align: center;
+            border: solid 1px white;
+            width: 180px;
+            border-radius: 5px;
+        }
+        .Profile:hover{
+            transform: scale(1.1);
+        }
+        .nav > div {
+            height: auto;
+            max-width: 200px;
+        }
+        .nav-logo > img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .accounts {
+            display: grid;
+            grid-template-columns: repeat(4, 160px);
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+        .individualAccount {
+            height: 160px;
+            background-position: center;
+            background-size:contain; 
+        }
+        .individualAccount:hover{
+            transform: scale(1.1);
+        }
+        .individualAccount > img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 10%;
+            box-shadow: gray 1px 1px 10px;
+        }
+        .individualAccount > p {
+            text-align: center;
+        }     
 
     </style>
 
 </head>
 
 <body>
- <nav>
-    <ul>
-        <li>Home</li>
-        <li>Page</li>
-        <li>Net</li>
-        <li>Lol</li>
-    </ul>
-
+ <nav class="nav">
+    <div class="nav-logo col-4 col-s-3">
+        <img src="images/Netflix-logo.png" alt="Netflix logo">
+    </div>
  </nav>
+ <header>WHO IS WATCHING?</header>
+ <section class="accounts">
+        <div class="individualAccount">
+            <img src="images/tigerpicture.jpg" alt="Profile Picture 1">
+            <p>Stig</p>
+        </div>
+        <div class="individualAccount">
+            <img src="images/giraffe.png" alt="Profile Picture 2">
+            <p>Linda</p>
+        </div>
+        <div class="individualAccount">
+            <img src="images/pigpitcure.jpg" alt="Profile Picture 3">
+            <p>Mohamed</p>
+        </div>
+        <div class="individualAccount">
+            <img src="images/dogpitcure.jpg" alt="Profile Picture 4">
+            <p>Wo Lee </p>
+        </div>
+        
+
+ </section>
+ <footer>
+    <div class="Profile">
+        <h4>Manage Profiles</h4>
+    </div>
+    
+ </footer>
     
     
 </body>
