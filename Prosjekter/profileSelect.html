@@ -81,11 +81,11 @@
             transform: scale(1.1);
 
         }
-        .nav > div {
+        .nav > div  {
             height: auto;
             max-width: 200px;
         }
-        .nav-logo > img {
+        .nav-logo > a > img {
             object-fit: cover;
             height: 100%;
             width: 100%;
@@ -105,7 +105,7 @@
         .individualAccount:hover{
             transform: scale(1.1);
         }
-        .individualAccount > img {
+        .individualAccount > a > img {
             object-fit: cover;
             height: 100%;
             width: 100%;
@@ -114,7 +114,6 @@
         }
         .individualAccount > p {
             text-align: center;
-            
         }     
 
         
@@ -125,26 +124,36 @@
 <body>
  <nav class="nav">
     <div class="nav-logo col-4 col-s-3">
+        <a href="mainpage.html">
         <img src="images/Netflix-logo.png" alt="Netflix logo">
+    </a>
     </div>
  </nav>
  <header>WHO IS WATCHING?</header>
  <section class="accounts">
         <div class="individualAccount">
+            <a href="mainpage.html">
             <img src="images/tigerpicture.jpg" alt="Profile Picture 1">
+            </a>
             <p>Stig</p>
         </div>
         <div class="individualAccount">
+            <a href="mainpage.html">
             <img src="images/giraffe.png" alt="Profile Picture 2">
+            </a>
             <p>Linda</p>
         </div>
         <div class="individualAccount">
+            <a href="mainpage.html">
             <img src="images/pigpitcure.jpg" alt="Profile Picture 3">
-            <p>Mohamed</p>
+            </a>
+            <p>Bob</p>
         </div>
         <div class="individualAccount">
+            <a href="mainpage.html">
             <img src="images/dogpitcure.jpg" alt="Profile Picture 4">
-            <p>Wo Lee </p>
+            </a>
+            <p>Karen</p>
         </div>
         
         
@@ -152,7 +161,7 @@
  </section>
  <footer>
     <div class="Profile">
-        <h4>Manage Profiles<a href="/Prosjekter/index.html"</h4>
+        <h4>Manage Profiles</h4>
     </div>
     
  </footer>
