@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <p id="title">Hello Web Developers!</p>
+    <input type="text" id="inputText" value=""/>
+    <button id="addButton" onclick="handleClick()">Add</button>
+    <ul id="listItem-section"></ul>
+  </div>
+  <script>
+      const listItemSection = document.querySelector("#listItem-section");
+      let inputText = document.querySelector("#inputText");
+      let addButton = document.querySelector("#addButton");
+      let title = document.getElementById("title");
+      title.style.color = "blue";   
+      let htmlTxt = "";
+      const handleClick = () => {			
+          htmlTxt += `
+              <li>${ inputText.value }</li>
+            `;
+            listItemSection.innerHTML = htmlTxt;
+        };
+        //addButton.onclick = handleClick;  			
+
+  </script>
+</body>
+</html>
+

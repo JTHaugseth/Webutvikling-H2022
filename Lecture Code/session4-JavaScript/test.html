@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- DEFINE HTML OBJECTS		 -->
+    <div id="root"></div>
+    <script>
+    /*
+        FETCH HTML OBJECTS		
+    */
+   let root = document.getElementById("root");
+    /*
+        FUNCTIONS, etc
+    */
+   const getResult = () => {
+        let multiplyPlusAdd =(n1, n2) => n1*n2;
+        let result=multiplyPlusAdd(2,3);
+        result= ((a, b) => {return a*b;})(3,4);
+        return result;
+   }
+   let result = getResult();
+    /*
+        EVENTS
+    */
+    root.innerHTML=result;
+    </script>
+</body>
+</html>
+
+

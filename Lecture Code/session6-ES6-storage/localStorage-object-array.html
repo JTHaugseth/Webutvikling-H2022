@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Colors - Legg inn fargekoder</title>
+	
+	<!--
+		Forstå hvordan localStorage kan brukes for å ta vare på et array med objekter.
+		setItem, getItem, clear, removeItem, array, object literal, push
+	-->
+</head>
+<body>
+		
+	<div>
+		
+		<header>
+			<h1>Colors</h1>			
+		</header>
+		
+		<main>
+			
+			<section>
+				<fieldset>
+					<legend>Skriv inn farger</legend>
+					<label>Farge</label>
+					<input id="color-txt" type="text">
+					<input id="add-color-btn" type="button" value="Legg til farge">
+					<input id="delete-colors-btn" type="button" value="Slett farger">
+				</fieldset>
+			</section>
+			
+			<section id="output-section"></section>
+			
+		</main>
+		
+	</div>
+	
+	<script>
+	
+		/*
+			HTML OBJECTS
+		*/
+		const colorTxt = document.getElementById("color-txt");
+		const addColorBtn = document.getElementById("add-color-btn");
+		const deleteColorsBtn = document.getElementById("delete-colors-btn");
+		const outputSection = document.getElementById("output-section");
+		
+		/*
+			FUNCTIONS
+			AddColor må opprette helt nytt array første gang bruker legger til nytt objekt. Fra og med andre gang bruker legger til nytt objekt må vi hente ut arrayet som allerede ligger lagret i localStorage. Dvs. vi må sjekke om det finnes noe eller ikke i localStorage først.
+		*/
+		const addColor = () => {
+			let colorsArray; 
+			
+			if( localStorage.getItem("colors") != null ){
+			   colorsArray = JSON.parse( localStorage.getItem("colors") );
+				//Hvorfor blir linje 54 et array? Blir flere values i en key automatisk et array via JSON.parse?
+				
+				// [{"color": "red"}]
+				// redf8rf34+935
+
+			} else{
+			   colorsArray = [];
+			}
+			
+			
+			let colorInputted = colorTxt.value;
+			
+			let newColor = { color: colorInputted };
+			
+			colorsArray.push( newColor );
+			
+			localStorage.setItem( "colors", JSON.stringify( colorsArray ) );
+			
+			generateHTML();
+		}
+				
+		const generateHTML = () => {
+			
+			let colors = JSON.parse( localStorage.getItem( "colors" ) );				
+			
+			if(colors != null){
+				let htmlTxt = "";
+
+				colors.forEach( color => {
+					htmlTxt += `<h3 style="background-color: ${ color.color }">${ color.color }</h3>`;
+				} );
+
+				outputSection.innerHTML = htmlTxt;
+			}else{		
+				outputSection.innerHTML = "Ingen farger er lagt til enda!";
+			}
+		}	
+		
+		const deleteColors = () => {
+			localStorage.removeItem("colors");
+			generateHTML();
+		}
+		
+		/* 
+			INIT FUNCTIONS
+			Self invoking / immediately invoked arrow function 
+		*/
+		(
+			INIT = () => {
+				generateHTML();
+			}
+		)();
+		
+		
+		/*
+			EVENTS
+		*/
+		addColorBtn.addEventListener("click", addColor);
+		deleteColorsBtn.addEventListener("click", deleteColors);
+		
+	</script>
+	
+</body>
+</html>
+
+
+
+

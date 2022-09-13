@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!--
+		Forstå hvordan localStorage fungerer i sammenheng med å lagre et objekt
+		setItem, getItem, clear, removeItem, object literal
+	-->
+</head>
+<body>
+		
+	<div>
+		
+		<header>
+			<h1>Movies</h1>
+		</header>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script>
+		
+		const outputMain = document.getElementById("output-main");
+		
+		const movie1Object = { 
+			title: "The Grudge",
+			year: 2020,
+			category: "Horror",
+			price: 99
+		};
+		
+		//Viktig faktum: merk at localStorage kan aksesseres fra alle nettsider i et nettsted.		
+		localStorage.setItem("movie1", JSON.stringify( movie1Object ) );	
+		
+		
+		let numberOfKeys = localStorage.length;
+		console.log(numberOfKeys);
+		
+		if( numberOfKeys > 0 ){
+			outputMain.innerHTML = `local storage inneholder keys: ${ numberOfKeys}`;
+		}else{
+			outputMain.innerHTML = "local storage er tom";
+		}
+		
+		const movie1FromLocalStorage = JSON.parse( localStorage.getItem("movie1") );
+
+;		console.log(localStorage.getItem("movie2"));
+		
+		outputMain.innerHTML += `
+			<article>
+				<h3>${ movie1FromLocalStorage.title }</h3>
+				<p>${ movie1FromLocalStorage.price },- NOK</p>
+				<p>${ movie1FromLocalStorage.category }</p>
+			</article>
+		`; 
+		
+	</script>
+	
+</body>
+</html>
+
+
+
+

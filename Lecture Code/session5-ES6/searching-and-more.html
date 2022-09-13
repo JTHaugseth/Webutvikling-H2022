@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	<!--
+		Bruk av diverse ES6-teknikker
+	-->
+	
+</head>
+<body>
+	
+	<div>
+		
+		<header></header>
+		
+		<main id="output-main">
+			<section class="form-section">					
+				<label>Title</label>
+				<input class="textbox" id="title-txt" placeholder="Search title here..." type="text">
+				<button id="search-title-btn">Search Movie Title</button>
+			</section>
+			<section class="form-section">
+				<label>Filmer etter</label>
+				<input class="textbox" id="year-after-txt" placeholder="Search year here..." type="text">
+				<button id="search-year-after-btn">Search Movie after given year</button>
+			</section>
+			
+			<section class="form-section">
+				<label>Category</label>
+				<select class="select" id="category-select">
+					<option>Select category</option>
+					<option value="Action">Action</option>
+					<option value="Drama">Drama</option>
+					<option value="Comedy">Comedy</option>
+					<option value="Horror">Horror</option>
+					<option value="Cartoon">Cartoon</option>
+				</select>
+			</section>
+			<section>
+				<button id="show-comedies-btn">Show Comedies</button>
+			</section>	
+			<section id="output-section"></section>
+		</main>
+		
+	</div>
+	<script src="scripts/movies.js"></script>
+	<script>
+	
+		/*
+			HTML OBJECTS		
+		*/
+		const outputSection = document.getElementById("output-section");
+		
+		/*
+			ARRAYS	
+		*/		
+		const moviesArray = [
+			{ 
+				title: "Bad Boys", 
+				year: 1995, 
+				imageSrc: "Bad_Boys_for_Life.jpg", 
+				price: 39, 
+				category: "Action"
+			},
+			{ 
+				title: "Birds of prey", 
+				year: 2020, 
+				imageSrc: "Birds_Of_Prey.jpg", 
+				price: 69, 
+				category: "Action"
+			},
+			{ 
+				title: "Da 5 Bloods", 
+				year: 1998, 
+				imageSrc: "Da5Bloods.jpg", 
+				price: 99, 
+				category: "Drama"
+			},
+			{ 
+				title: "Dolittle", 
+				year: 2020, 
+				imageSrc: "Dolittle.jpg", 
+				price: 99, 
+				category: "Comedy"
+			},
+			{ 
+				title: "John Wick 3", 
+				year: 2019, 
+				imageSrc: "John_Wick_3.jpg", 
+				price: 89, 
+				category: "Action"
+			},
+			{ 
+				title: "Once upon a time in Hollywood", 
+				year: 2019, 
+				imageSrc: "Once_Upon_A_Time_In_Hollywood.jpg", 
+				price: 89, 
+				category: "Drama"
+			},
+			{ 
+				title: "Scoob", 
+				year: 2014, 
+				imageSrc: "Scoob.jpg", 
+				price: 59, 
+				category: "Cartoon"
+			},
+			{ 
+				title: "Sonic", 
+				year: 2020, 
+				imageSrc: "Sonic_the_Hedgehog.jpg", 
+				price: 49, 
+				category: "Comedy"
+			},
+			{ 
+				title: "My spy", 
+				year: 2000, 
+				imageSrc: "My_spy.jpg", 
+				price: 69, 
+				category: "Comedy"
+			},
+			{ 
+				title: "The grudge", 
+				year: 2015, 
+				imageSrc: "The_Grudge.jpg", 
+				price: 79, 
+				category: "Horror"
+			},
+			{ 
+				title: "The turning", 
+				year: 2010, 
+				imageSrc: "The_Turning.jpg", 
+				price: 89, 
+				category: "Horror"
+			},
+			{ 
+				title: "The way back", 
+				year: 2003, 
+				imageSrc: "The_Way_Back.jpeg", 
+				price: 79, 
+				category: "Drama"
+			}
+		];
+		/*
+			FUNCTIONS
+		*/
+		const getAllMovies = () => {
+			return moviesArray;
+		}
+		const showComedies = () => {
+			const movies = getAllMovies();
+			let filteredMovies = movies.filter(movie => movie.category == "Comedy");
+			showMovies(filteredMovies);
+		}
+
+		const searchTitle = () => {
+			const searchTitle = document.getElementById("title-txt");
+				const movies = getAllMovies();
+			let filteredMovies = movies.filter(movie => movie.title == searchTitle.value);
+			showMovies(filteredMovies);
+		}
+
+		const searchYearAfter = () => {
+			const searchYearAfter = document.getElementById("year-after-txt");
+			const movies = getAllMovies();
+			let filteredMovies = movies.filter(movie => movie.year > searchYearAfter.value);
+			showMovies(filteredMovies);
+		}
+
+		const selectCategory = () => {
+			const selectCategory = document.getElementById("category-select");
+			const movies = getAllMovies();
+			let filteredMovies = movies.filter(movie => movie.category === selectCategory.value);
+			showMovies(filteredMovies);
+		}
+
+		const showMovies = (movies) => {
+			let htmlTxt = "";
+			movies.forEach(movie=> {
+				htmlTxt += `
+					<article class="movie-box"> 
+						<h3>${ movie.title }</h3>
+						<img class="fluid-image" src="images/${ movie.imageSrc }" alt="Foto. Cover ${ movie.title }">
+						<p>${ movie.category}</p>
+					</article>
+				`;
+			});
+			outputSection.innerHTML = htmlTxt;
+		}
+
+		/*
+			EVENTS
+		*/
+		document.getElementById("show-comedies-btn").addEventListener("click", showComedies);
+		document.getElementById("search-title-btn").addEventListener("click", searchTitle);
+		document.getElementById("search-year-after-btn").addEventListener("click", searchYearAfter);
+		document.getElementById("category-select").addEventListener("change", selectCategory);
+		/*
+			INIT FUNCTIONS
+		*/
+		// (
+		// 	()=>{
+		// 		const movies = getAllMovies();
+		// 		let htmlTxt = "";
+		// 		movies.forEach(movie=> {
+		// 			htmlTxt += `
+		// 				<article class="movie-box"> 
+		// 					<h3>${ movie.title }</h3>
+		// 					<img class="fluid-image" src="images/${ movie.imageSrc }" alt="Foto. Cover ${ movie.title }">
+		// 					<p>${ movie.category}</p>
+		// 				</article>
+		// 			`;
+		// 		});
+		// 		outputMain.innerHTML = htmlTxt;
+		// 	}
+		// )();
+		
+	</script>
+	
+</body>
+</html>

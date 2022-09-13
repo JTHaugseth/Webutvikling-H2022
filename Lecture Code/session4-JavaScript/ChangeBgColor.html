@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <p class="example" id="example1">Paragraph 1 with id="example1"</p>
+    <p class="example" id="example2">Paragraph 2 with id="example2"</p>
+    <p>Click the button to change background color</p>
+    <button onclick="changeBgColor2()">Try It</button>
+    <button onclick="this.style.display='none'">Click to remove me</button>
+
+  </div>
+  <script>
+
+      let htmlTxt = "";
+		
+      function changeBgColor() {
+        const listOfItems = document.querySelectorAll(".example");
+        listOfItems.forEach(item=> {
+          item.style.backgroundColor="red";
+        })
+      }
+      function changeBgColor2() {
+        // document.getElementsByClassName("example")[0].style.backgroundColor="red";
+        // convert HTMLCollection to array using [...arr]
+        const itemCollection = document.getElementsByClassName("example");
+        [...itemCollection].forEach(item=> {
+          item.style.backgroundColor="red";
+        })
+      }
+  </script>
+</body>
+</html>
+

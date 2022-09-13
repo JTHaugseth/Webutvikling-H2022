@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!--
+		Forstå hvordan grunnleggende localStorage fungerer.
+		setItem, getItem, clear, removeItem.
+		Lagre navn, bildenavn osv. i localStorage.
+	-->
+</head>
+<body>
+	
+	<div>
+		
+		<header></header>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script>
+		const outputMain = document.getElementById("output-main");
+		localStorage.clear();
+		
+		//kaller på window(=nettleser)-objektet
+		// window.localStorage.setItem("movie1", "Doolittle");
+		//kan la være å skrive window foran
+		// localStorage.setItem("movie2", "John Wick 3");
+		//hvis man refererer til samme key blir den overskrevet
+		localStorage.setItem("movie1", "Bad Boys");
+		localStorage.setItem("movie2", "Bad Boys 2");
+		localStorage.setItem("movie1Poster", "Dolittle.jpg");
+		
+		//localStorage.removeItem("movie1");
+		//localStorage.clear();
+		
+		const movie1Title = localStorage.getItem("movie1");
+		const movie1Poster = localStorage.getItem("movie1Poster");
+
+
+		let numberOfKeys = localStorage.length;
+		console.log(numberOfKeys);
+
+		outputMain.innerHTML = `
+			<article>
+				<h3>${ movie1Title }</h3>
+				<img src="images/${ movie1Poster }">
+			</article>
+		`;
+		
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+

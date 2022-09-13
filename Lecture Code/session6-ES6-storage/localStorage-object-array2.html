@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Colors - Legg inn fargekoder</title>
+	
+	<!--
+		Forstå hvordan localStorage kan brukes for å ta vare på et array med objekter.
+		setItem, getItem, clear, removeItem, array, object literal, push
+	-->
+</head>
+<body>
+		
+	<div>
+		
+		<header>
+			<h1>Add word to list</h1>			
+		</header>
+		
+		<main>
+			
+			<section>
+				<fieldset>
+					<legend>Write a new word</legend>
+					<label>word</label>
+					<input id="word-txt" type="text">
+					<input id="add-word-btn" type="button" value="Add a new wordsArray">
+					<input id="delete-words-btn" type="button" value="Delete all words">
+				</fieldset>
+			</section>
+			
+			<section id="output-section"></section>
+			
+		</main>
+		
+	</div>
+	
+	<script>
+	
+		/*
+			HTML OBJECTS
+		*/
+		const wordTxt = document.getElementById("word-txt");
+		const addWordBtn = document.getElementById("add-word-btn");
+		const deleteWordsBtn = document.getElementById("delete-words-btn");
+		const outputSection = document.getElementById("output-section");
+		
+		/*
+			FUNCTIONS
+		*/
+		const addWord = () => {
+			let wordsArray; 
+			
+			if( localStorage.getItem("words") != null ){
+				wordsArray = JSON.parse( localStorage.getItem("words") );
+
+
+			} else{
+				wordsArray = [];
+			}
+
+			
+			wordsArray.push( wordTxt.value );
+			
+			localStorage.setItem( "words", JSON.stringify( wordsArray ) );
+			
+			generateHTML();
+		}
+				
+		const generateHTML = () => {
+			
+			let words = JSON.parse( localStorage.getItem( "words" ) );				
+			
+			if(words != null){
+				let htmlTxt = "";
+
+				words.forEach( word => {
+					htmlTxt += `
+					<li>${ word }</li>
+					`;
+				} );
+
+				outputSection.innerHTML = htmlTxt;
+			}else{		
+				outputSection.innerHTML = "No words";
+			}
+		}	
+		
+		const deleteWords = () => {
+			localStorage.removeItem("words");
+			generateHTML();
+		}
+		
+		/* 
+			INIT FUNCTIONS
+			Self invoking / immediately invoked arrow function 
+		*/
+		(
+			INIT = () => {
+				generateHTML();
+			}
+		)();
+		
+		
+		/*
+			EVENTS
+		*/
+		addWordBtn.addEventListener("click", addWord);
+		deleteWordsBtn.addEventListener("click", deleteWords);
+		
+	</script>
+	
+</body>
+</html>
+
+
+
+
