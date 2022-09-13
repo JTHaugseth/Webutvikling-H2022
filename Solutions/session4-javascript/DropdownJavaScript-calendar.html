@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-button {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }      
+      .dropdown-content a:hover {background-color: #ddd;}
+
+      .show {
+        display: block;
+      }
+
+    </style>
+  </head>
+<body>
+
+  <div class="dropdown">
+    <button onclick="handleClick()" id="dropdown-button" class="dropdown-button">Dropdown</button>
+    <div id="dropdown-content" class="dropdown-content">
+    </div>
+  </div>
+
+
+<script>
+    const calendarArray = ["January","February","March",
+        "April","May","June","July","August","September",
+        "October","November","December"];
+    const dropdownContent = document.querySelector("#dropdown-content");
+    let htmlTxt = "";
+    calendarArray.forEach( item => {
+				htmlTxt += `
+					<li>
+						${ item }
+          </li>
+					`;
+          dropdownContent.innerHTML = htmlTxt;
+        } );
+
+    const handleClick = () => {	
+        document.getElementById("dropdown-content").classList.toggle("show");
+      }
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var dropdown of dropdowns) {
+          if (dropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+</script>
+
+</body>
+</html>
