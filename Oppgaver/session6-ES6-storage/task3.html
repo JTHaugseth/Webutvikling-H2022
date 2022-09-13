@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Min bokliste</title>
+</head>
+<body>
+	
+	<div>
+		
+		<header>
+			<h1>Min bokliste</h1>
+		</header>
+		
+		<main>
+			
+			<section>
+				<fieldset>
+					<legend>Legg til bøker</legend>
+					<label>Tittel</label>
+					<input id="title-txt" type="text">
+					<label>Forfatter</label>
+					<input id="author-txt" type="text">
+					<input id="add-book-btn" type="button" value="Legg til bok">
+					<input id="delete-books-btn" type="button" value="Slett listen">
+				</fieldset>
+				<p id="status-p"></p>
+			</section>
+			
+			<section id="output-section">
+								
+			</section>			
+			
+		</main>		
+		
+	</div>
+	
+	<script>
+	
+		/*
+			HTML OBJECTS
+		*/
+		const titleTxt = document.getElementById("title-txt");
+		const authorTxt = document.getElementById("author-txt");
+		const addBookBtn = document.getElementById("add-book-btn");
+		const deleteBooksBtn = document.getElementById("delete-books-btn");
+		const statusP = document.getElementById("status-p");
+		const outputSection = document.getElementById("output-section");
+		
+		/*
+			FUNCTIONS
+		*/
+		const addBook = () => {
+			let bookArray;
+			
+			if( localStorage.length > 0 ){				
+				bookArray = JSON.parse( localStorage.getItem("books") );
+			}else{
+				bookArray = [];				
+			}
+			
+			const title = titleTxt.value;
+			const author = authorTxt.value;
+
+			const newBook = { title: title, author: author };
+
+			bookArray.push( newBook );
+
+			localStorage.setItem( "books", JSON.stringify( bookArray ) );
+			
+			checkLocalStorage();
+			showBooks();
+			
+			//For testens skyld
+			console.log( localStorage );
+			
+		}
+		
+		const deleteBooks = () => {
+			localStorage.clear();
+			checkLocalStorage();
+		}
+		
+		const checkLocalStorage = () => {
+			if( localStorage.length > 0){
+				statusP.innerHTML = "Local Storage inneholder informasjon.";
+			}else{
+				statusP.innerHTML = "Local Storage er tom.";
+			}
+		}
+		
+		const showBooks = () => {
+			if( localStorage.length > 0 ){
+				const bookArray = JSON.parse( localStorage.getItem("books") ) ;
+				
+				let htmlTxt = "";
+				
+				bookArray.forEach( book => {
+					htmlTxt += `
+						<article>
+							<h3>${ book.title }</h3>
+							<p>Av: ${ book.author } </p>
+						</article>
+					`
+				});
+				
+				outputSection.innerHTML = htmlTxt;
+			}
+		}
+		
+		/*
+			INIT FUNCTIONS
+		*/
+		
+		(
+			init = () => {
+				checkLocalStorage();
+				showBooks();
+			}
+		)()
+		
+		
+		/*
+			EVENTS
+		*/
+		addBookBtn.addEventListener("click", addBook);
+		deleteBooksBtn.addEventListener("click", deleteBooks);
+		
+	</script>
+	
+	
+</body>
+</html>
