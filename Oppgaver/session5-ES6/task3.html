@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 3</title>
+</head>
+<body>
+    
+    <h1>Land i Europa Versjon 2</h1>
+    <button id="button1">Vis land</button>
+    <section id="section"></section>
+    
+
+    <script>
+
+        let section = document.getElementById("section");
+        const button = document.getElementById("button1");
+
+        const countryArray = [
+            {Name: "Norge", capital: "Oslo", flag: "Norsk flag"}, 
+            {Name: "Danmark", capital: "københavn", flag: "Dansk flag"}, 
+            {Name: "Sverige", capital: "Stockholm", flag: "Svensk flag"}, 
+            {Name: "Island", capital: "Reykjavik", flag: "Islandsk flag"}
+            ];
+
+        Btn = () => {
+            section.innerHTML = "";
+
+            countryArray.forEach(country => {
+                section.innerHTML += `
+                    <article>
+                        <h3>${country.Name}</h3>
+                        <p>${country.capital}</p>
+                        <p>${country.flag}</p>
+                    </article>`;
+            });
+        }
+            
+        button.onclick = Btn;
+
+    </script>
+    
+</body>
+</html>
