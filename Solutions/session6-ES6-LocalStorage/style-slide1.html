@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+<h1>My Style - Dashboard</h1>
+<ul>
+<li><a href="style-slide1.html">Mystyle - Dashboard</a></li>
+<li><a href="style-slide2.html">Mystyle</a></li>
+</ul>
+
+
+<fieldset>
+  <legend>Styling</legend>
+  <label for="text-color">Tekstfarge</label>
+  <input type="text" id="text-color" name="text-color">
+  <label for="background-color">Bakgrunnsfarge</label>
+  <input type="text" id="background-color" name="background-color">
+  <button id="saveStyling-btn" onclick="saveStyling()">Lagre styling</button>
+  <button id="deleteStyling-btn" onclick="deleteStyling()">Slett styling</button>
+  <section id="output-section"></section>
+</fieldset>
+
+<script> 
+  const textColorInput = document.querySelector("#text-color");
+  const backgroundColorInput = document.querySelector("#background-color");
+  const outputSection = document.querySelector("#output-section");
+  
+  const saveStyling = () => {
+   			
+    localStorage.setItem('textColor', textColorInput.value);
+    localStorage.setItem('backgroundColor', backgroundColorInput.value);
+       
+    checkInfoInLocalStorage();
+  }
+  
+  const deleteStyling = () => {
+    localStorage.clear();
+    checkInfoInLocalStorage();
+  }
+  
+  const checkInfoInLocalStorage = () => {
+     const numberOfItems = localStorage.length;
+     let message = ``;     
+     if(numberOfItems === 0)
+     	message  = `Ingen stil er satt`;
+     else {
+		let textColor = localStorage.getItem("textColor");
+        let backgroundColor = localStorage.getItem("backgroundColor");
+     	message = `Styling er lagret. color: (${ textColor }), background color: (${ backgroundColor }).`;
+     }
+     outputSection.innerHTML = message;
+  }
+  ( // immediately triggered arrow function	
+	() => checkInfoInLocalStorage()
+  )();
+  
+</script>
+</body>
+</html>

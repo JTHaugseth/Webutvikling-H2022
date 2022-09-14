@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style id="my-styling">
+</style>
+</head>
+<body>
+
+<div>
+<h1>My Style</h1>
+<section id="output-section"></section>
+<ul>
+<li><a href="style-slide1.html">Mystyle - Dashboard</a></li>
+<li><a href="style-slide2.html">Mystyle</a></li>
+</ul>
+
+<article>
+  <h3>Lorem ipsum</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore pariatur sit quis animi mollitia perferendis hic iusto consectetur, cumque. Ratione?</p>
+</article>	
+
+</div>
+<script> 
+ 
+  const outputSection = document.querySelector("#output-section");
+  
+  const setStyling = () => {
+    let textColor = localStorage.getItem("textColor");
+    let backgroundColor = localStorage.getItem("backgroundColor");
+    const style = document.querySelector("#my-styling");
+    style.innerHTML = `
+      div > * {
+        color: ${ textColor };
+        background-color: ${ backgroundColor };
+      }`;
+  }
+
+  const checkInfoInLocalStorage = () => {
+     if(localStorage.length === 0) {
+        outputSection.innerHTML = `Ingen stil er satt`;
+     }
+     else {
+       setStyling();
+     }
+     
+  }
+  ( // immediately triggered arrow function	
+	() => checkInfoInLocalStorage()
+  )();
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vanlig til Arrow</title>
+	<!--
+		Målet med denne oppgaven er å konvertere fra vanlig funksjon til arrow function
+	-->
+</head>
+<body>
+	
+	<input id="show-random-number-btn" type="button" value="Vis tilfeldig tall (vanlig funksjon)">
+	<input id="show-random-number2-btn" type="button" value="Vis tilfeldig tall (arrow-funksjon)">
+	<p id="output-p"></p>
+	<p id="output2-p"></p>
+
+	<script>
+			
+		/*
+			HTML objects
+		*/
+		const showRandoNumberBtn = document.querySelector("#show-random-number-btn");
+		const showRandoNumber2Btn = document.querySelector("#show-random-number2-btn");
+		const outputP = document.querySelector("#output-p");
+		const output2P = document.querySelector("#output2-p");
+		
+		/*
+			Variables
+		*/		
+		
+		/*
+			Functions
+		*/		
+		function getARandomNumber(){
+			outputP.innerHTML = `Fra vanlig funksjon: ${ Math.random() }`;
+		}	
+		
+		const getARandomNumber2 = () => {
+			output2P.innerHTML = `Fra arrow-funksjon: ${ Math.random() }`;
+		};
+		
+		
+		/*
+			Events
+		*/
+		showRandoNumberBtn.addEventListener("click", getARandomNumber);
+		showRandoNumber2Btn.addEventListener("click", getARandomNumber2);
+		
+	</script>
+</body>
+</html>

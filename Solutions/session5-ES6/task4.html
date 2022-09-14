@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Departments</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>Ansatte</h1>
+		</header>
+		
+		<main>
+			
+			<section>
+				<h3>Søk etter avdeling</h3>
+				<label>Avdeling</label>
+				<select id="department-select">
+					<option value="support">Support</option>
+					<option value="hr">HR</option>
+					<option value="marketing">Marketing</option>
+				</select>
+				<input id="search-btn" type="button" value="Søk">
+			</section>
+			
+			<section id="employees-section"></section>
+			
+		</main>
+		
+		
+	</div>
+
+
+	<script>
+	
+		/*
+			HTML objects
+		*/
+		const departmentSelect = document.querySelector("#department-select");
+		const searchBtn = document.querySelector("#search-btn");
+		const employeesSection = document.querySelector("#employees-section");		
+		
+		/*
+			Variables
+		*/
+		const employeesArray = [
+			{ firstName: "John", surname: "Resig", department: "hr" },
+			{ firstName: "Lisa", surname: "Anderson", department: "hr" },
+			{ firstName: "Robert", surname: "Eich", department: "support" },
+			{ firstName: "Kumar", surname: "Sarwar", department: "support" },
+			{ firstName: "Anita", surname: "Turing", department: "marketing" },
+			{ firstName: "Aurora", surname: "Pedersen", department: "hr" }
+		];
+		
+		let departmentChoice;
+		let chosenEmployees;
+		
+		/*
+			Functions		
+		*/
+		const search = () => {
+			
+			/*departmentChoice = departmentSelect.options[ departmentSelect.selectedIndex ].value;*/
+			departmentChoice = departmentSelect.value;
+			
+			chosenEmployees = employeesArray.filter( employee => employee.department === departmentChoice );
+			
+			let htmlTxt = "";
+			
+			chosenEmployees.forEach( employee => {
+				htmlTxt += `
+					<article>
+						<h3>${ employee.firstName } ${ employee.surname }</h3>
+						<p>Department: ${ employee.department }</p>
+					</article>
+				`;
+			})
+			
+			employeesSection.innerHTML = htmlTxt;
+			
+		}
+				
+		/*
+			Events
+		*/
+		searchBtn.onclick = search;
+		
+	</script>
+	
+</body>
+</html>

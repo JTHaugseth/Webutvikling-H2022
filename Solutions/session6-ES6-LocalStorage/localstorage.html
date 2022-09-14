@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+  <h1>Restaurant FavorittMat</h1>
+<fieldset>
+  <legend>Din Info:</legend>
+  <label for="name">Navn</label>
+  <input type="text" id="name-txt" name="name-txt">
+  <label for="food">Favorittmat</label>
+  <input type="text" id="food-txt" name="food-txt">
+  <button id="saveInformation-btn" onclick="saveInformation()">Lagre informasjon</button>
+  <button id="deleteInformation-btn" onclick="deleteInformation()">Slett informasjon</button>
+  <section id="output-section"></section>
+</fieldset>
+<script> 
+  const nameInput = document.querySelector("#name-txt");
+  const foodInput = document.querySelector("#food-txt");
+  const outputSection = document.querySelector("#output-section");
+  
+  const saveInformation = () => {
+    let message = ``; 
+    const name = nameInput.value;
+    const food = foodInput.value;
+	if(name.trim().length > 0 && food.trim().length > 0) {
+   			
+    	localStorage.setItem('name', nameInput.value);
+    	localStorage.setItem('food', foodInput.value);
+        message = `Ditt navn (${ name }) og favorittmat (${ food }) er nå lagret.`;
+    } else {
+        message = "<span style='color: red'>Vennligst fyll ut både navn og favorittmat.</span>"
+    }
+    outputSection.innerHTML = message;
+  }
+  
+  const deleteInformation = () => {
+    localStorage.clear();
+    checkInfoInLocalStorage();
+  }
+  
+  const checkInfoInLocalStorage = () => {
+     const numberOfItems = localStorage.length;
+     let message = ``;     
+     if(numberOfItems === 0)
+     	message  = `Antall verdier i local storage: ${ numberOfItems }`;
+     else {
+		    let name = localStorage.getItem("name");
+        let food = localStorage.getItem("food");
+     	  message = `Velkommen tilbake ${ name }, din favorittmat er ${ food }. Ønsker du å bestille det igjen?`;
+     }
+     outputSection.innerHTML = message;
+  }
+  ( // immediately triggered arrow function	
+	() => checkInfoInLocalStorage()
+  )();
+  
+</script>
+
+
+</body>
+</html>

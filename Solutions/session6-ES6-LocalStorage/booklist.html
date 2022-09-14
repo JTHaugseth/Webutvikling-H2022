@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<h1>Min bokliste</h1>
+<fieldset>
+  <legend>Legg til bøker</legend>
+  <label>Tittel</label>
+  <input id="title-txt" type="text">
+  <label>Forfatter</label>
+  <input id="author-txt" type="text">
+  <button id="addBooklist-btn" onclick="addBooklist()">Legg til bok</button>
+  <button id="deleteBooklist-btn" onclick="deleteBooklist()">Slett listen</button>
+  <section id="output-section"></section>
+</fieldset>
+<script> 
+  const titleInput = document.querySelector("#title-txt");
+  const authorInput = document.querySelector("#author-txt");
+  const outputSection = document.querySelector("#output-section");
+  
+  const addBooklist = () => {
+    const numberOfItems = localStorage.length;
+    let booklist;
+    if(numberOfItems === 0) {
+      booklist = [];
+    } else {
+      booklist = JSON.parse(localStorage.getItem("booklist"));
+    }
+    let book = {title:titleInput.value, author: authorInput.value};
+    booklist.push(book);
+    localStorage.setItem("booklist", JSON.stringify(booklist));
+    showBooks();
+  }
+  
+  const deleteBooklist = () => {
+    localStorage.clear();
+    showBooks();
+  }
+  
+  const showBooks = () => {
+     const numberOfItems = localStorage.length; 
+     if(numberOfItems > 0) {
+        let booklist = JSON.parse(localStorage.getItem("booklist"));
+        let htmlTxt = "";
+	      booklist.forEach( book => {
+	 	      htmlTxt += `
+            <article>
+            <h3>${ book.title }</h3>
+            <p>Av:${ book.author }</p>
+            </article>
+           `;
+	      });
+        outputSection.innerHTML = htmlTxt;
+     }
+     else{
+      outputSection.innerHTML = "";
+     }
+
+     
+  }
+
+  ( // immediately triggered arrow function	
+	() => showBooks()
+  )();
+  
+</script>
+
+
+</body>
+</html>
