@@ -30,7 +30,15 @@
 		
 	</div>
 	
-	<script src="scripts/task2-side2.js"></script>
+	<script>
+
+		let colorText = localStorage.getItem("color");
+		let bgColorText = localStorage.getItem("bgColor");
+
+		document.body.style.color = `${colorText}`;
+		document.body.style.backgroundColor = `${bgColorText}`;
+
+	</script>
 	
 </body>
 </html>

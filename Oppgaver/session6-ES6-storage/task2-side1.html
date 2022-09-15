@@ -36,7 +36,32 @@
 		
 	</div>
 	
-	<script src="scripts/task2-side1.js"></script>
+	<script>
+
+		const colorTxt = document.getElementById("color-txt");
+		const backgroundColorTxt = document.getElementById("bg-color-txt");
+		const saveButton = document.getElementById("save-styling-btn");
+		const deleteButton = document.getElementById("delete-styling-btn");
+		let output = document.getElementById("output-section");
+
+		saveBtn = () => {
+			let colorText = colorTxt.value;
+			let bgColorText = backgroundColorTxt.value;
+
+			localStorage.setItem("color", colorText);
+			localStorage.setItem("bgColor", bgColorText);
+
+			output.innerHTML = `Tekstfargen: ${colorText} - og bakgrunnsfargen: ${bgColorText} er lagret!`;
+		}
+		deleteBtn = () => {
+			localStorage.clear();
+			output.innerHTML = `Tekstfargen og bakgrunnsfargen er slettet fra Local Storage`;
+		}
+
+		saveButton.onclick = saveBtn;
+		deleteButton.onclick = deleteBtn;
+
+	</script>
 	
 </body>
 </html>
