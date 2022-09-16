@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+		
+		<header>
+			<h1>Ansatte</h1>
+		</header>
+		
+		<main>
+			
+			<section>
+				<h3>Søk etter avdeling</h3>
+				<label>Avdeling</label>
+				<select id="department-select">
+					<option value="support">Support</option>
+					<option value="hr">HR</option>
+					<option value="marketing">Marketing</option>
+				</select>
+				<input id="search-btn" type="button" value="Søk">
+			</section>
+			
+			<section id="employees-section"></section>
+			
+		</main>
+		
+		
+	</div>
+
+    <script>
+
+		const select = document.getElementById("department-select");
+        const button = document.getElementById("search-btn");
+        let employeeSection = document.getElementById("employees-section");
+        
+        const employeesArray = [
+			{ firstName: "John", surname: "Resig", department: "hr" },
+			{ firstName: "Lisa", surname: "Anderson", department: "hr" },
+			{ firstName: "Robert", surname: "Eich", department: "support" },
+			{ firstName: "Kumar", surname: "Sarwar", department: "support" },
+			{ firstName: "Anita", surname: "Turing", department: "marketing" },
+			{ firstName: "Aurora", surname: "Pedersen", department: "hr" }
+		];
+		
+        let selection;
+        let htmlTxt;
+        let searchDepartment
+		
+        btn = () => {
+            
+			htmlTxt = "";
+            selection = select.value;
+
+            searchDepartment = employeesArray.filter(person => person.department == selection);
+
+            searchDepartment.forEach(person => {
+                htmlTxt += `
+                    <article>
+                        <h4>${person.firstName} ${person.surname}</h4>
+                        <p>${person.department}</p>
+                    </article>`
+            })
+
+            employeeSection.innerHTML = htmlTxt;
+            
+        }
+
+        button.onclick = btn;
+    </script>
+    
+</body>
+</html>

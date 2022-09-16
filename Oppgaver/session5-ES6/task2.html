@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input1">
+    <label>* / + -</label>
+    <input type="text" id="input2">
+    <br>
+    <input type="button" id="multiply-button" value="Multipliser"></input>
+    <input type="button" id="divide-button" value="Divider"></input>
+    <input type="button" id="add-button" value="Adder"></input>
+    <input type="button" id="subtract-button" value="Subtraher"></input>
+    <p id="result-txt"></p>
+
+    <script>
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const multiplyBtn = document.getElementById("multiply-button");
+        const divideBtn = document.getElementById("divide-button");
+        const addBtn = document.getElementById("add-button");
+        const subtractBtn = document.getElementById("subtract-button");
+        let result = document.getElementById("result-txt");
+
+        let number1;
+        let number2;
+
+        getNumbers = () => {
+            number1 = parseInt(input1.value);
+            number2 = parseInt(input2.value);
+        };
+        multiplyFunction = () => {
+            getNumbers();
+            result.innerHTML = `Multipliser = ${number1 * number2}`;
+        };
+        divideFunction = () => {
+            getNumbers();
+            result.innerHTML = `Divider = ${number1 / number2}`;
+        };
+        addFunction = () => {
+            getNumbers();
+            result.innerHTML = `Adder = ${number1 + number2}`;
+        };
+        subtractFunction = () => {
+            getNumbers();
+            result.innerHTML = `Subtraher = ${number1 - number2}`;
+        };
+
+        multiplyBtn.onclick = multiplyFunction;
+        divideBtn.onclick = divideFunction;
+        addBtn.onclick = addFunction;
+        subtractBtn.onclick = subtractFunction;
+    </script>
+    
+</body>
+</html>

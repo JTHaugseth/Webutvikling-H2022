@@ -34,7 +34,64 @@
 		
 	</div>		
 	
-	<script src="scripts/task1.js"></script>
+	<script>
+		// Hente verdier
+		const nameValue = document.querySelector("#name-txt");
+		const favoriteFoodValue = document.querySelector("#favorite-food-txt");
+		const button1 = document.getElementById("save-information-btn");
+		const button2 = document.getElementById("delete-information-btn");
+		const output = document.querySelector("#output-section");
+		
+		let htmlTxt;
+		let keyCounter = localStorage.length;
+		
+		btn1 = () => {
+			htmlTxt = "";
+			let name = nameValue.value;
+			let favoriteFood = favoriteFoodValue.value;
+
+			if(name == ""|| favoriteFood == "") {
+				htmlTxt += `<p style="color:red;">Vennligst fyll ut både navn og favorittmat!</p>`
+			} else {
+				localStorage.setItem(`name${keyCounter}`, name);
+				localStorage.setItem(`favoriteFood${keyCounter}`, favoriteFood)
+				keyCounter++;
+			
+				counter = localStorage.length / 2;
+				htmlTxt += `
+					<article>
+					<p>Ditt navn (${name}) og favorittmat (${favoriteFood}) er nå lagret.</p>
+					<p>Antall verdier i local storage: ${counter}</p>
+					</article>`	
+			}
+			output.innerHTML = htmlTxt;	
+		}
+		btn2 = () => {
+			localStorage.clear();
+			htmlTxt = "";
+			
+			counter = localStorage.length;
+			htmlTxt += `<p>Antall verdier i local storage: ${counter}</p>`
+
+			output.innerHTML = htmlTxt;
+			
+		}
+		if(localStorage.length > 0) {
+			htmlTxt = "";
+			let name = localStorage.getItem("name0");
+			let favoriteFood = localStorage.getItem("favoriteFood0");
+			htmlTxt += `
+					<article>
+					<p>Velkommen tilbake ${name}, din favorittmat er ${favoriteFood}. Ønsker du å bestille det igjen?</p>
+					</article>`;
+			output.innerHTML = htmlTxt;
+		}
+		
+		button1.onclick = btn1;
+		button2.onclick = btn2;
+
+		
+	</script>
 
 </body>
 </html>

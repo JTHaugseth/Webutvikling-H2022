@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1</title>
+</head>
+<body>
+    <button id="button1">Vis tilfeldig tall</button>
+    <button id="button2">Vis tilfeldig tall med arrow funksjon</button>
+    <ul id="output"></ul>
+    
+    <script>
+        
+        const button1 = document.getElementById("button1");
+        const button2 = document.getElementById("button2");
+        const output = document.getElementById("output")
+
+        text ="";
+        function funk1(){
+            let randomNumber = Math.random();
+            text += ` <li>${randomNumber}</li>`;
+            output.innerHTML = text;
+        };
+        
+        funk2 = () => {
+            let randomNumber = Math.random();
+            text += ` <li>${randomNumber}</li>`;
+            output.innerHTML = text;
+        };
+        
+
+        button2.onclick = funk2;
+        button1.onclick = funk1;
+        
+    </script>
+
+    
+</body>
+</html>
