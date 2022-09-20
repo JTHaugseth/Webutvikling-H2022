@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>Local storage</header>
+    <main id="output-main">
+    </main>
+    <section id="output-section">
+    </section>
+    <section id="array-section">
+        <label>Word</label>
+        <input id="inputtext" type="text" value="word">
+
+        <button id="add-btn">Add a word</button>
+        <button id="delete-btn">Delete all</button>
+    </section>
+    <section id="output-array">
+
+    </section>
+    <script>
+        const output = document.getElementById("output-main");
+        const User = {
+            name: "Yuan",
+            job: "teacher"
+        };
+
+        localStorage.setItem("movie1", "Bad Boys");
+        localStorage.setItem("movie1Poster", "Bad_Boys_for_Life.jpg")
+
+        localStorage.setItem("user", JSON.stringify(User));
+
+        let movie1 = localStorage.getItem("movie1");
+        let movie1Poster= localStorage.getItem("movie1Poster");
+        let htmlTxt=`
+            <article>
+                <h1>${movie1}</h1>
+                <img src="images/${movie1Poster}">
+            </article>
+            `;
+        output.innerHTML=htmlTxt; 
+        
+        let user1 = localStorage.getItem("user");
+        console.log(user1);
+        let user1obj = JSON.parse(user1);    
+        let htmlTxt2=`
+        <article>
+            <h1>${user1obj.name}</h1>
+            <h1>${user1obj.job}</h1>
+        </article>
+        `;
+        document.getElementById("output-section").innerHTML=htmlTxt2;
+
+        const generateHTML=()=>{
+            let words = localStorage.getItem("words");
+            if(words!=null) {
+                let allWords= JSON.parse(words);
+                let htmlTxt='';
+                allWords.forEach(word => {
+                    htmlTxt+=`
+                    <p>${word}</p>
+                    `;                
+                });
+                document.getElementById("output-array").innerHTML=htmlTxt;
+            }   else{
+                document.getElementById("output-array").innerHTML="";
+            }         
+        }
+        const addWord =()=>{
+            const wordinput = document.getElementById("inputtext");
+            let wordsArray;
+            let words = localStorage.getItem("words");
+            if(words !=null){
+                wordsArray=JSON.parse(words);
+            } else {
+                wordsArray=[];
+            }
+            wordsArray.push(wordinput.value);
+            localStorage.setItem("words", JSON.stringify(wordsArray));
+            generateHTML();
+        }
+
+        const deleteWord = () => {
+            localStorage.removeItem("words");
+            generateHTML();
+        }
+
+        const addbtn=document.getElementById("add-btn");
+        const deleteBtn=document.getElementById("delete-btn");
+        addbtn.addEventListener("click", addWord);
+        deleteBtn.addEventListener("click", deleteWord);
+        
+        /*IIFE, called when loading the webpage*/
+        (
+            ()=>{
+                generateHTML();
+            }
+
+        )();
+
+    </script>
+    
+</body>
+</html>
