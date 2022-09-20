@@ -1,0 +1,179 @@
+*{
+
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(70, 70, 85);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    
+}
+body{
+    background-color: rgb(148, 149, 139);
+    width: 60%;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 20px;
+  margin: 30px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #B7B6C1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+li a:hover {
+  background-color: #555;
+  color: white;
+
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(148, 149, 139);
+    align-items: center;
+    justify-content: center;
+}
+
+#output-menu{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 10px;
+}
+
+.food-box{
+	padding: 10px;
+	grid-column: auto / span 4;
+	background-color: rgb(20, 20, 20);		
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.food-box h3{
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 2rem;
+	color: rgb(100, 150, 250);
+}
+
+.food-box p{
+  text-align: center;
+	margin: 5px;
+	color: rgb(255, 255, 255);
+}
+
+/* .food-box img {
+    width: 100%;
+    max-height: 300px;
+    margin: 5px;
+    padding: 30px;
+    max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+   
+}
+ */
+.food-box img {
+  max-height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+ 
+}
+
+.food-box img:hover {
+    opacity: 80%;
+    transition: 0.1s ease;
+}
+.fluid-image{
+	width: 100%;
+}
+
+.pasta{
+	border-bottom: 10px solid lightslategray;
+}
+
+.pizza{
+	border-bottom: 10px solid lightseagreen;
+}
+
+/* .btn{
+	display: block;
+	width: 20%;	
+	border: 1px solid rgb(30, 30, 30);
+	padding: 10px;
+	margin-top: 10px;
+  font-size: 20px;
+}
+
+.btn-order{
+	background-color: grey;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.btn-order:hover{
+  background-color:#555;
+  color: white;
+} */
+
+/* .change-quantity{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.inputquantity{
+  width: 15%;
+  border: 1px solid rgb(30, 30, 30);
+	padding: 10px;
+	margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+} */
+
+.shoppingcart-item{
+  display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+}
+
+/* Here the background color changes to make mobile and computer layout more immersive */
+@media only screen and (max-width: 1200px) {
+    body {
+      background-color: rgb(70, 70, 85);
+      color: white;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    main {
+      background-color: rgb(70, 70, 85);
+      color: white;
+    
+    }
+    
+    /* Here i added a second media query to make the logo disappear into the border */
+    .logo{
+        display: none;
+    }
+  }
+  

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>  
+
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="css/style.css">
+    <header>
+
+         <nav>
+            <div class="navigation-bar">
+                <div id="navigation-container">
+                    <i class="fas fa-pizza-slice fa-3x"></i>
+                
+                     <ul>
+                        <li><a href="http://127.0.0.1:5500/solution/session7-html-css-JavaScript-wrapup/about.html">Home Page</a></li>
+                        <li><a href="http://127.0.0.1:5500/solution/session7-html-css-JavaScript-wrapup/menu.html">Order Menu</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="logo"> 
+                <img src="images/logo1.png">
+            </div>
+         </nav>
+    </header> 
+
+    <h3>Your chosen products:</h3>
+    <div id="output-section"></div>
+    <div>
+        <input class="btn btn-secondary btn-lg" type="button" value="Remove All" id="removeall-btn">
+    </div>
+    <script src="scripts/food.js"></script>
+    <script>
+        const outputSection = document.getElementById("output-section");
+        const removeAllBtn = document.getElementById("removeall-btn");
+
+        const removeAll =()=>{
+			localStorage.removeItem("orderedDishes");
+			generateHTML();
+        }
+
+        const generateHTML=()=>{
+            const allfood = getAllDishes();
+            let foodshoppingCart = JSON.parse( localStorage.getItem( "orderedDishes" ) );				
+			
+			if(foodshoppingCart != null){
+				let htmlTxt = "";
+
+				foodshoppingCart.forEach( item => {
+                    let i = item.id;
+                    htmlTxt+=`
+                        <article class=" food-box shoppingcart-item">
+                            <p style="font-size:24px; text-align:center">${allfood[i].description}</p>
+                            <img class="fluid-image" src="images/${ allfood[i].imageSrc }" alt="Foto. Cover ${ allfood[i].description }">
+                            <p style="font-size:20px">Price: ${ allfood[i].price },-</p>
+                            <p style="font-size:20px">Quantity:  ${item.quantity}</p>
+                        </article>
+                    `;				
+                });
+
+				outputSection.innerHTML = htmlTxt;
+			}else{		
+				outputSection.innerHTML = "You have not chosen anyfood!";
+			}
+        }
+        (
+			INIT = () => {
+				generateHTML();
+			}
+		)();
+
+        removeAllBtn.addEventListener("click", removeAll)
+    </script>
+</body>
+</html>
