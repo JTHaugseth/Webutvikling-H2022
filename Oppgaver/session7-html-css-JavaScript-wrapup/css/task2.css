@@ -1,0 +1,84 @@
+body{
+	font-family: sans-serif;
+}
+
+#output-main{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 10px;
+}
+
+.movie-box{
+	padding: 10px;
+	grid-column: auto / span 12;
+	background-color: rgb(20, 20, 20);		
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.movie-box h3{
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 2rem;
+	color: rgb(100, 150, 250);
+}
+
+.movie-box p{
+	margin: 5px;
+	color: rgb(255, 255, 255);
+}
+
+.action-movie{
+	border-bottom: 10px solid yellow;
+}
+
+.drama-movie{
+	border-bottom: 10px solid blue;
+}
+
+.horror-movie{
+	border-bottom: 10px solid green;
+}
+
+.cartoon-movie{
+	border-bottom: 10px solid red;
+}
+
+.comedy-movie{
+	border-bottom: 10px solid orange;
+}
+
+.btn{
+	display: block;
+	width: 100%;	
+	border: 1px solid rgb(30, 30, 30);
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.btn-rent{
+	background-color: rgb(90, 180, 90);
+}
+
+.fluid-image{
+	width: 100%;
+}
+
+@media (min-width: 600px){
+	.movie-box{
+		grid-column: auto / span 6;
+	}
+}
+
+@media (min-width: 972px){
+	.movie-box{
+		grid-column: auto / span 4;
+	}
+}
+
+@media (min-width: 1200px){
+	.movie-box{
+		grid-column: auto / span 3;
+	}
+}

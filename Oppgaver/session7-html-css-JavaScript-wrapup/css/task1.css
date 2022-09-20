@@ -1,0 +1,38 @@
+body{
+	font-family: sans-serif;
+}
+
+#output-main{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 10px;
+}
+
+.movie-box{
+	padding: 10px;
+	grid-column: auto / span 12;
+	background-color: rgb(20, 20, 20);
+	text-align: center;
+	color: rgb(100, 150, 250);
+
+.fluid-image{
+	width: 100%;
+}
+
+@media (min-width: 600px){
+	.movie-box{
+		grid-column: auto / span 6;
+	}
+}
+
+@media (min-width: 972px){
+	.movie-box{
+		grid-column: auto / span 4;
+	}
+}
+
+@media (min-width: 1200px){
+	.movie-box{
+		grid-column: auto / span 3;
+	}
+}
