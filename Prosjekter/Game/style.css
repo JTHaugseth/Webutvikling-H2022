@@ -1,0 +1,35 @@
+.div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    z-index: 2;
+}
+.sword {
+    position: absolute;
+    height: 120px;
+    width: 15px;
+    top: -70px;
+    left: 70px;
+    background-color: black;
+    transition-duration: 0.5s;
+    transform-origin: bottom;
+    transform: rotate(40deg);
+}
+.enemy {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 400px;
+    left: 1000px;
+    background-color: blue;
+    z-index: 1;
+}
+.healthbar{
+    position: absolute;
+    height: 13px;
+    left: 5px;
+    top: -25px;
+    background-color: rgb(63, 183, 63);
+    border: 1px solid black;
+    z-index: 1;
+}
