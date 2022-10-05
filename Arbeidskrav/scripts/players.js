@@ -8,7 +8,7 @@ let retrieveAllPlayers = ( function() {
         rating: 99,
         imgSrc: './images/haaland.webp',
         origin: 'Norway',
-        leauge: 'Premier Leauge',
+        league: 'Premier League',
         club: 'Manchester City',
     },
     {
@@ -17,7 +17,7 @@ let retrieveAllPlayers = ( function() {
         rating: 97,
         imgSrc: './images/richarlison.webp',
         origin: 'Brazil',
-        leauge: 'Premier Leauge',
+        league: 'Premier League',
         club: 'Spurs',
     },
     {
@@ -26,7 +26,7 @@ let retrieveAllPlayers = ( function() {
         rating: 98,
         imgSrc: './images/koulibaly.webp',
         origin: 'Senegal',
-        leauge: 'Premier Leauge',
+        league: 'Premier League',
         club: 'Chelsea',
     },
     {
@@ -35,7 +35,7 @@ let retrieveAllPlayers = ( function() {
         rating: 96,
         imgSrc: './images/ketelaere.webp',
         origin: 'Belgium',
-        leauge: 'Serie A TIM',
+        league: 'Serie A TIM',
         club: 'Milan',
     },
     {
@@ -44,7 +44,7 @@ let retrieveAllPlayers = ( function() {
         rating: 96,
         imgSrc: './images/ronaldo.webp',
         origin: 'Portugal',
-        leauge: 'Premier Leauge',
+        league: 'Premier League',
         club: 'Manchester United',
     },
     {
@@ -53,7 +53,7 @@ let retrieveAllPlayers = ( function() {
         rating: 99,
         imgSrc: './images/messi.webp',
         origin: 'Argentina',
-        leauge: 'Champions Leuage',
+        league: 'Champions League',
         club: 'PSG',
     },
     {
@@ -62,16 +62,16 @@ let retrieveAllPlayers = ( function() {
         rating: 84,
         imgSrc: './images/sterling.webp',
         origin: 'England',
-        leauge: 'Premier Leauge',
+        league: 'Premier League',
         club: 'Chelsea',
     },
     {
         id: 8,
         name: 'Zlatan',
         rating: 82,
-        imgSrc: './images/zlatan.webp',
+        imgSrc: './images/zlatan.jpg',
         origin: 'Sweden',
-        leauge: 'Serie A TIM',
+        league: 'Serie A TIM',
         club: 'Milan',
     },
 ];
