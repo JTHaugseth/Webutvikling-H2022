@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Søk etter film</title>
+	<link rel="stylesheet" type="text/css" href="css/task3.css">	
+</head>
+<body>
+	
+	<div>
+		
+		<header id="main-page-header">
+			<a id="logo" href="#nogo">Movies2020</a>
+		</header>
+		
+		<nav></nav>
+		
+		<main>
+			
+			<header>
+				<h3>Søk etter filmer</h3>
+			</header>
+			
+			<section>
+					
+				<section class="form-section">					
+					<label>Tittel</label>
+					<input class="textbox" id="title-txt" placeholder="skriv inn søkeord" type="text">
+					<input class="btn" id="search-title-btn" type="button" value="Søk etter tittel">
+				</section>
+				
+				<section class="form-section">
+					<label>Filmer etter</label>
+					<input class="textbox" id="year-after-txt" placeholder="skriv inn år" type="text">
+					<input class="btn" id="search-year-after-btn" type="button" value="Søk filmer etter angitt år">
+				</section>
+				
+				<section class="form-section">
+					<label>Kategori</label>
+					<select class="select" id="category-select">
+						<option>Velg kategori</option>
+						<option value="Action">Action</option>
+						<option value="Drama">Drama</option>
+						<option value="Comedy">Komedie</option>
+						<option value="Horror">Skrekk</option>
+						<option value="Cartoon">Tegnefilm</option>
+					</select>
+				</section>
+				
+			</section>
+			
+			<section id="output-section"></section>
+			
+		</main>
+		
+	</div>
+	
+	<script src="scripts/movies.js"></script>
+	<script>
+	
+		/*
+			HTML OBJECTS		
+		*/
+		const titleTxt = document.getElementById("title-txt");
+		const searchTitleBtn = document.getElementById("search-title-btn");
+		const yearAfterTxt = document.getElementById("year-after-txt");
+		const searchYearAfterBtn = document.getElementById("search-year-after-btn");
+		const categorySelect = document.getElementById("category-select");
+		const outputSection = document.getElementById("output-section");
+				
+		/*
+			ARRAYS	
+		*/
+		const allMovies = getAllMovies();
+				
+		/*
+			FUNCTIONS
+		*/
+		const searchTitle = () => {
+			let title = titleTxt.value.toLowerCase();			
+			let searchedMovies = allMovies.filter( movie => movie.title.toLowerCase().includes(title) );			
+			showMovies( searchedMovies );
+		}
+		
+		const searchYearAfter = () => {
+			let yearAfter = parseInt( yearAfterTxt.value );
+			let searchedMovies = allMovies.filter( movie => movie.year > yearAfter );
+			showMovies( searchedMovies );
+		}
+		
+		const showMovies = ( movies ) => {
+			let htmlTxt = "";
+			movies.forEach( movie => {
+				htmlTxt += `
+					<article class="movie-box">
+						<h3>${ movie.title}</h3>
+						<img class="img-fluid" src="images/${ movie.imageSrc }" alt="Foto. ${ movie.title }">
+					</article>
+				`;
+			});
+			outputSection.innerHTML = htmlTxt;
+		}
+		
+		const searchCategory = () => {
+			let category = categorySelect.value;
+			let searchedMovies = allMovies.filter( movie => movie.category === category ); 
+			showMovies( searchedMovies );
+		}
+		
+		/*
+			INIT FUNCTIONS
+		*/
+
+		
+		/*
+			EVENTS
+		*/
+		searchTitleBtn.addEventListener("click", searchTitle);
+		searchYearAfterBtn.addEventListener("click", searchYearAfter);
+		categorySelect.addEventListener("change", searchCategory);
+		
+	</script>
+	
+</body>
+</html>

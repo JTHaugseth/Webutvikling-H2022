@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Alle filmer</title>
+	<link rel="stylesheet" type="text/css" href="css/task2.css">
+	
+</head>
+<body>
+	
+	<div>
+		
+		<header></header>
+		
+		<nav></nav>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script src="scripts/movies.js"></script>
+	<script>
+	
+		/*
+			HTML OBJECTS		
+		*/
+		const outputMain = document.getElementById("output-main");
+		
+		
+		/*
+			ARRAYS	
+		*/		
+		
+		
+		/*
+			FUNCTIONS
+		*/
+		
+		
+		/*
+			INIT FUNCTIONS
+		*/
+		(
+			() => {
+				const movies = getAllMovies();
+				
+				let htmlTxt = "";
+				
+				movies.forEach( movie => {
+					
+					let categoryClass = "";
+					
+					switch( movie.category ){
+						case "Action":
+							categoryClass = "action-movie";
+							break;
+						case "Drama":
+							categoryClass = "drama-movie";
+							break;
+						case "Horror":
+							categoryClass = "horror-movie";
+							break;
+						case "Cartoon":
+							categoryClass = "cartoon-movie";
+							break;
+						case "Comedy":
+							categoryClass = "comedy-movie";
+					}
+					
+					htmlTxt += `
+						<article class="movie-box ${ categoryClass }"> 
+							<div>
+								<h3>${ movie.title }</h3>
+								<img class="fluid-image" src="images/${ movie.imageSrc }" alt="Foto. Cover ${ movie.title }">
+								<p>${ movie.category}</p>
+								<p>År: ${ movie.year }</p>
+								<p>Pris: ${ movie.price },-</p>
+							</div>
+							<input class="btn btn-rent" type="button" value="Lei film">
+						</article>
+					`;
+				});
+				
+				outputMain.innerHTML = htmlTxt;
+			}
+		)();
+		
+		/*
+			EVENTS
+		*/
+		
+	</script>
+	
+</body>
+</html>

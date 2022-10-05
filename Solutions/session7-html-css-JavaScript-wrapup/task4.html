@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movies2020</title>
+	<style>
+		/*
+			Denne koden bruker man normalt CSS reset for.
+		*/
+		body, ul{
+			margin: 0;
+		}
+		
+		#main-page-header{						
+			background-color: rgb(30, 30, 30);
+		}
+		
+		#logo{
+			text-decoration: none;
+			color: rgb(150, 200, 2000);
+			font-family: sans-serif;
+			font-size: 1.2rem;
+			margin-left: 10px;
+		}
+		
+		#main-page-nav{
+			display: none;
+		}
+		
+		#main-page-nav ul{
+			list-style: none;
+			padding: 0;
+		}
+		
+		#main-page-nav a{
+			display: block;			
+			padding: 20px;
+			text-align: center;
+			color: rgb(255, 255, 255);
+			text-decoration: none;
+		}
+		
+		#main-page-nav a:hover{
+			background-color: rgb(255, 255, 255);
+			color: rgb(30, 30, 30);
+		}
+		
+		#hamburger-btn{
+			width: 40px;			
+			margin-right: 10px;
+			cursor: pointer;			
+		}
+		
+		#logo-hamburger{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		
+		@media (min-width: 768px){
+			#main-page-header{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			
+			#hamburger-btn{
+				display: none;
+			}
+			
+			#main-page-header ul{
+				display: flex;
+			}
+			
+			#main-page-nav{
+				display: block;
+			}	
+		}	
+		
+	</style>
+</head>
+<body>
+	<div>
+		
+		<header id="main-page-header">
+			<div id="logo-hamburger">
+				<a id="logo" href="#nogo">Movies2020</a>
+				<img id="hamburger-btn" src="images/hamburger.png">
+			</div>
+			<nav id="main-page-nav">
+				<ul>
+					<li><a href="#nogo">Home</a></li>
+					<li><a href="#nogo">About</a></li>
+					<li><a href="#nogo">Contact</a></li>
+					<li><a href="#nogo">Membership</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+	</div>
+	
+	<script>
+		const hamburgerBtn = document.getElementById("hamburger-btn");
+		const mainPageNav = document.getElementById("main-page-nav");
+		
+		const mobileMenuDisplay = () => {
+			if( mainPageNav.style.display === "" || mainPageNav.style.display === "none" ){
+				mainPageNav.style.display = "block";
+			}else{
+				mainPageNav.style.display = "none";
+			}
+			console.log(mainPageNav.style.display);
+		}
+		
+		
+		/*
+			Kode som sjekker om brukeren endrer skjermoppløsning. Ellers vil menyen forbli skjult når det går fra mobil til over 768px
+		*/
+		const checkResize = ( e ) => {
+			if( document.documentElement.clientWidth > 768 ){
+				if( mainPageNav.style.display === "none" ){
+					mainPageNav.style.display = "block";
+				}
+			}else{
+				mainPageNav.style.display = "none";
+			}
+		}
+		
+		hamburgerBtn.addEventListener("click", mobileMenuDisplay);
+				
+		window.addEventListener("resize", checkResize);
+	</script>
+	
+</body>
+</html>
