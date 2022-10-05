@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Alle filmer</title>
+	<link rel="stylesheet" type="text/css" href="css/task2.css">
+	
+</head>
+<body>
+	
+	<div>
+		
+		<header></header>
+		
+		<nav></nav>
+		
+		<main>
+			<div class="movie-layout">
+				<section class="movie-section">
+					<header>Add a Movie</header>
+					<div>
+						<label>Id</label>
+						<input type="text" id="add-id-txt" placeholder="Enter the Id">
+					</div>
+					<div>
+						<label>Title</label>
+						<input type="text" id="add-title-txt" placeholder="Enter the Title">
+					</div>
+					<input type="file" id="add-movie-poster">
+					<input type="button" value="Add a Movie" id="add-movie-btn">
+				</section>
+				<section class="movie-section">
+					<header>Update a Movie</header>
+					<div>
+						<label>Id</label>
+						<input type="text" id="update-id-txt" placeholder="Enter the Id">
+					</div>
+					<div>
+						<label>Title</label>
+						<input type="text" id="update-title-txt" placeholder="Enter the Title">
+					</div>
+					<input type="file" id="update-movie-poster">
+					<input type="button" value="Update a Movie" id="update-movie-btn">
+				</section>
+				<section class="movie-section">
+					<header>Delete a Movie</header>
+					<div>
+						<label>Id</label>
+						<input type="text" id="delete-id-txt" placeholder="Enter the Id">
+					</div>
+					<input type="button" value="Delete a Movie" id="delete-movie-btn">
+
+				</section>
+			</div>
+			<section id="output-main"></section>
+		</main>
+		
+	</div>
+	
+	<script src="scripts/movies.js"></script>
+	<script>
+	
+		/*
+			HTML OBJECTS		
+		*/
+		const outputMain = document.getElementById("output-main");
+		
+		const addIdTxt=document.getElementById("add-id-txt");
+		const addTitleTxt=document.getElementById("add-title-txt");
+		const addMoviePoster=document.getElementById("add-movie-poster");
+		const addMovieBtn=document.getElementById("add-movie-btn");
+
+		const updateIdTxt=document.getElementById("update-id-txt");
+		const updateTitleTxt=document.getElementById("update-title-txt");
+		const updateMovieBtn=document.getElementById("update-movie-btn");
+
+		const deleteIdTxt=document.getElementById("delete-id-txt");
+		const deleteMovieBtn=document.getElementById("delete-movie-btn");
+		
+		
+		/*
+			ARRAYS	
+		*/		
+		const movies = getAllMovies();
+		
+		/*
+			FUNCTIONS
+		*/
+		const getRelativePath =(path)=>{
+			let location=path.lastIndexOf('\\');
+			return path.slice(location);
+		}
+		const addMovie=()=>{
+			let imageSrc= getRelativePath(addMoviePoster.value)
+			let newMovie= {
+				id: addIdTxt.value,
+				title: addTitleTxt.value,
+				imageSrc: imageSrc
+			};
+			console.log(addMoviePoster.value)
+			movies.push(newMovie);
+			showMovies(movies);
+		}
+		const deleteMovie =()=>{
+			let id= parseInt(deleteIdTxt.value);
+			let index = movies.findIndex(movie=>movie.id===id);
+			movies.splice(index, 1);
+			showMovies(movies);
+		}
+		
+		const updateMovie=()=>{
+			let id= parseInt(updateIdTxt.value);
+			let movie = movies.find(movie=>movie.id===id);
+			let updatedMovie ={
+				id: updateIdTxt.value,
+				title: updateTitleTxt.value?updateTitleTxt.value:movie.title,
+				imageSrc: movie.imageSrc
+			}
+			newMovies = movies.map(movie=>movie.id!=id?movie:updatedMovie);
+			showMovies(newMovies);
+
+		}
+		const showMovies =(movies)=>{
+			let htmlTxt = "";
+				
+				movies.forEach( movie => {
+					
+					let categoryClass = "";
+					
+					switch( movie.category ){
+						case "Action":
+							categoryClass = "action-movie";
+							break;
+						case "Drama":
+							categoryClass = "drama-movie";
+							break;
+						case "Horror":
+							categoryClass = "horror-movie";
+							break;
+						case "Cartoon":
+							categoryClass = "cartoon-movie";
+							break;
+						case "Comedy":
+							categoryClass = "comedy-movie";
+					}
+					
+					htmlTxt += `
+						<article class="movie-box ${ categoryClass }"> 
+							<div>
+								<h3>${ movie.id}</h3>
+								<h3>${ movie.title }</h3>
+								<img class="fluid-image" src="images/${ movie.imageSrc }" alt="Foto. Cover ${ movie.title }">
+								<p>${ movie.category}</p>
+								<p>År: ${ movie.year }</p>
+								<p>Pris: ${ movie.price },-</p>
+							</div>
+							<input class="btn btn-rent" type="button" value="Lei film">
+						</article>
+					`;
+				});
+				
+				outputMain.innerHTML = htmlTxt;
+		}
+		/*
+			INIT FUNCTIONS
+		*/
+		(
+			() => {				
+				showMovies(movies)
+			}
+		)();
+		
+		/*
+			EVENTS
+		*/
+		addMovieBtn.addEventListener("click", addMovie);
+		deleteMovieBtn.addEventListener("click", deleteMovie);
+		updateMovieBtn.addEventListener("click", updateMovie);
+		
+	</script>
+	
+</body>
+</html>

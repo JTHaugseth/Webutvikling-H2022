@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Alle filmer</title>
+	<link rel="stylesheet" type="text/css" href="css/task1.css">
+</head>
+<body>
+	
+	<div>
+		
+		<header></header>
+		
+		<nav></nav>
+		
+		<main id="output-main"></main>
+		
+	</div>
+	
+	<script src="scripts/movies.js"></script>
+	<script>
+	
+		/*
+			HTML OBJECTS		
+		*/
+		const outputMain = document.getElementById("output-main");
+		
+		
+		/*
+			ARRAYS	
+		*/		
+		
+		
+		/*
+			FUNCTIONS
+		*/
+		
+		
+		/*
+			INIT FUNCTIONS
+		*/
+		(
+			() => {
+				const movies = getAllMovies();
+				
+				let htmlTxt = "";
+				
+				movies.forEach( movie => {
+					htmlTxt += `
+						<article class="movie-box"> 
+							<h3>${ movie.title }</h3>
+							<img class="fluid-image" src="images/${ movie.imageSrc }" alt="Foto. Cover ${ movie.title }">
+							<p>${ movie.category}</p>
+						</article>
+					`;
+				});
+				
+				outputMain.innerHTML = htmlTxt;
+			}
+		)();
+		
+		/*
+			EVENTS
+		*/
+		
+	</script>
+	
+</body>
+</html>

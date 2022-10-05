@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+</head>
+<body>
+
+    <input id="a-picture" type="file">
+    <input id="get-image-name-btn" type="button" value="Get image name">
+
+    <p id="output-p"></p>
+
+    <script>
+
+        const aPicture = document.querySelector("#a-picture");
+        const getImageNameBtn = document.querySelector("#get-image-name-btn");
+        const outputP = document.querySelector("#output-p");
+
+
+        const getImageName = () => {
+            console.log(aPicture.files[0].name);
+            outputP.innerHTML=aPicture.files[0].name;
+        }
+
+        getImageNameBtn.addEventListener("click", getImageName);
+
+    </script>
+    
+</body>
+</html>
