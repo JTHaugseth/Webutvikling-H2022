@@ -1,0 +1,131 @@
+
+*{
+    box-sizing: border-box;
+    color: white;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    
+    width: 100%; 
+    background-image: url("./Backgroundimage.jpg");
+    position: relative;
+    
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;} 
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;} 
+}
+@media only screen and (min-width: 1000px) {
+    .output {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width: 999px) {
+    .output {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .output {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: none;
+    }
+}
+
+.output {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    font-size: large;
+    gap: 20px;
+    
+    
+    
+
+}.images{
+    width: 200px;
+    height: 200px;
+    border-bottom: 2px white solid;
+}
+
+article>div{
+    background-image: url("../CSS/fifacard.png");
+    background-position: center;
+    background-size: 61vh;
+    background-repeat: no-repeat;
+    opacity: 100%;
+    box-shadow: 1px 1px 1px 1px grey;
+    
+    
+    
+}
+
+
+p {
+    font-weight: bold;
+    color:  #46390c;
+    
+
+    
+}
+
+h2 {
+    padding-top: 5px;
+    border-bottom: #46390c 2px solid;
+    color: #46390c;
+    font-weight: bold;
+}
+
+#playerRating {
+    border-top: #46390c 3px solid;
+}
+
+#playerOrigin {
+    border-top: #46390c 3px solid;
+}
+
+#playerLeague {
+    border-top: #46390c 3px solid;
+}
+
+#playerClub {
+    border-top: #46390c 3px solid;
+}
+
+
+
+
+
+
+
+
