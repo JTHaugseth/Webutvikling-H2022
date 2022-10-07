@@ -2,7 +2,7 @@ import retrieveAllPlayers from "./players.js"
 
 
     // Get elements
-    const outputMain = document.getElementById('Output-main');
+    const outputMain = document.getElementById('output-main');
     const players = retrieveAllPlayers.getAllPlayers();
 
 //  // Delete players
@@ -70,16 +70,18 @@ import retrieveAllPlayers from "./players.js"
     let htmlTxt = "";
 
     players.forEach(player => {
-        htmlTxt += `<article>
-                <div>
-                    <h2 class="playerName">${player.name}</h2>
-                    <img class="images" src="${player.imgSrc}" alt= "Picture of: ${player.name}"></img>
-                    <p id="playerRating">${player.rating}<p>
-                    <p id="playerOrigin">${player.origin}<p>
-                    <p id="playerLeague">${player.league}<p>
-                    <p id="playerClub">${player.club}<p>
-                </div>
-             </article>`;
+        htmlTxt += `<article class="playerCard">
+                        <div>
+                            <h2>${player.name}</h2>
+                            <div class="imageContainer">
+                            <img class="imageSize" src="${player.imgSrc}" alt= "Picture of: ${player.name}">
+                            </div>
+                            <p>Rating: ${player.rating}</p>
+                            <p>${player.origin}</p>
+                            <p>${player.league}</p>
+                            <p>${player.club}</p>
+                        </div>
+                    </article>`;
     });
     console.log(htmlTxt);
     outputMain.innerHTML = htmlTxt;
