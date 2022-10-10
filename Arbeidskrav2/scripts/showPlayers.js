@@ -73,9 +73,7 @@ import retrieveAllPlayers from "./players.js"
         htmlTxt += `<article class="playerCard">
                         <div>
                             <h2>${player.name}</h2>
-                            <div class="imageContainer">
                             <img class="imageSize" src="${player.imgSrc}" alt= "Picture of: ${player.name}">
-                            </div>
                             <p>Rating: ${player.rating}</p>
                             <p>${player.origin}</p>
                             <p>${player.league}</p>

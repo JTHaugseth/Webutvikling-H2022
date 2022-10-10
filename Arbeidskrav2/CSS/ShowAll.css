@@ -8,7 +8,6 @@ body {
     background-color: rgb(48, 48, 48);
     width: 60%;
     margin: auto;
-
 } 
 
 p {
@@ -17,14 +16,12 @@ p {
 
 #output-main {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
     grid-gap: 40px;
     grid-row-gap: 30px;
 }
 .playerCard {
     padding: 10px;
     border-radius: 3px;
-    grid-column: auto / span 12;
     background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
     background-position: center;
     background-size: 290%;
@@ -35,47 +32,65 @@ p {
     font-size: small;
    
 }
-.imageContainer {
-    
-}
 .imageSize{
     width: 100%;
 }
-
-@media (min-width: 600px){
-	.playerCard{
-		grid-column: auto / span 3;
+@media (max-width: 600px){
+	#output-main{
+		grid-template-columns: repeat(1,1fr);
 	}
+    #navList{
+        
+        flex-direction: column;
+    }
 }
-
-@media (min-width: 972px){
-	.playerCard{
-		grid-column: auto / span 2;
+@media (min-width: 600px){
+	#output-main{
+		grid-template-columns: repeat(1,1fr);
 	}
+    #navList{
+        
+        flex-direction: column;
+    }
+}
+@media (min-width: 768px){
+	#output-main{
+		grid-template-columns: repeat(2,1fr);
+	}
+    #navList{
+        
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 1200px){
-	.playerCard{
-		grid-column: auto / span 1;
+	#output-main{
+		grid-template-columns: repeat(4,1fr);
 	}
 }
 
-#different-pages{
-    
-    
-}
+
+
 #navList{
-    list-style: none;
-    text-decoration: none;
     display: flex;
     text-align: center;
-    justify-content: space-between;
-    padding-bottom: 30px;
+    justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: linear-gradient(190deg, #fcff9e 0%, #c67700 100%);
+    border: black 2px solid;
 }
 
 a{color: black
 }
+
+li:hover, a:hover{
+    transform: scale(1.1);
+    color: rgb(31, 31, 252);
+}
+
 
 
     
