@@ -1,7 +1,4 @@
-
-let retrieveAllPlayers = ( function() {
-
-    const playersArray = [
+const playersArray = [
     {
         id: 1,
         name: 'Haaland',
@@ -76,8 +73,18 @@ let retrieveAllPlayers = ( function() {
     },
 ];
 
+if (localStorage.getItem("Players")) {
+    console.log("Localstorage exists");
+} else {
+    localStorage.setItem("Players", JSON.stringify(playersArray));
+}
+
+let retrieveAllPlayers = ( function() {
+
+    const storedArray = JSON.parse(localStorage.getItem("Players"));
+
 const getAllPlayers = () => {
-    return playersArray;
+    return storedArray;
 }
 
 return{getAllPlayers}

@@ -14,23 +14,25 @@
 
 </head>
 
-<body>
+<body class="p-3 mb-2 bg-secondary text-white">
     <header>
-        <H1>Welcome to the search page!</H1>
-        <input type="text" id="input-name" placeholder="Search by Name">
-        <input type="text" id="input-rating" placeholder="Search by Rating"> 
-        <input type="text" id="input-country" placeholder="Search by Country">
-        <input type="text" id="input-league" placeholder="Search by League">
-        <input type="text" id="input-club" placeholder="Search by Club">
-        <input type="button" value="Search" id="search-button">
-    </header>
-
-    <section id="output-main"></section>
-
-    <script type="module" defer src="scripts/players.js"></script>
-    <script src="scripts/searchpage.js"></script>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+            
+                <H1 class="display-4">Welcome to the search page!</H1>
+                <p class="lead">Search by name, rating, country, league or club! </p>
+                <div class="lead"><input type="text" id="input-keyword" placeholder="Keyword">
+                <input type="button" value="Search" 
+                 class="btn btn-success" id="search-button"></div>
+            </header>
+        </div>
+                
+        <div class="row"><section id="output-main"></section></div>
+            
+            <script type="module" defer src="scripts/players.js"></script>
+            <script type="module" src="scripts/searchpage.js"></script>
     
-
+</div>
 </body>
 
 </html>

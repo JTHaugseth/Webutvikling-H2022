@@ -1,25 +1,54 @@
 import retrieveAllPlayers from "./players.js"
 
-const name = document.getElementById("input-name");
-const rating = document.getElementById("input-rating");
-const country = document.getElementById("input-country");
-const league = document.getElementById("input-league");
-const club = document.getElementById("input-club");
+const keyword = document.getElementById("input-keyword");
 const searchButton = document.getElementById("search-button");
 const output = document.getElementById("output-main");
 const players = retrieveAllPlayers.getAllPlayers();
 
 searchButton.onclick = () => {
-    getName = name.value;
-    getRating = rating.value;
-    getCountry = country.value;
-    getLeague = league.value;
-    getClub = club.value;
+
+    let newArr = [];
+    
+    let getKeyword = keyword.value.toLowerCase();
 
     players.forEach(player => {
-        players.filter(player => player.name == getName);
         
-    }
+        if (player.name.toLowerCase() == getKeyword || 
+            player.rating >= getKeyword || 
+            player.origin.toLowerCase() == getKeyword || 
+            player.league.toLowerCase() == getKeyword || 
+            player.club.toLowerCase() == getKeyword) 
+                
+            newArr.push(player);
+    });
+
+    const printAllPlayers = (newArr)=>{
+    
+        let htmlTxt = "";
+    
+        newArr.forEach(player => {
+            htmlTxt += `        <div class="col-md-4">
+                                <article class="playerCard">
+                                <h2 >${player.name}</h2>
+                                <img class="img-fluid" src="${player.imgSrc}" alt= "Picture of: ${player.name}">
+                                <p>Rating: ${player.rating}</p>
+                                <p>${player.origin}</p>
+                                <p>${player.league}</p>
+                                <p>${player.club}</p>
+                            </div></div>
+                        </article>`;
+        });
+        output.innerHTML = htmlTxt;
+    
+     }
+    
+     (
+        ()=>{
+            printAllPlayers(newArr)
+        }
+     )();
+
+
     
     
 }
