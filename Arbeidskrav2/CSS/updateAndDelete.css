@@ -1,0 +1,29 @@
+
+img {
+    max-height: 200px;
+}
+p {
+    font-size: 100%;
+    border-top: 2px solid white;
+}
+
+.playerCard:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.playerCard::after {
+    
+}
+
+h2 {
+    border-bottom: 1px solid black;
+}
+
+.playerCard {
+    background-color: grey;
+    border: 1px solid black;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 3px;
+}
