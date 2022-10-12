@@ -48,15 +48,19 @@ window.onclick = e => {
 }
 
 deleteBtn.onclick = () => {
-    if(confirm(`Are you sure you want to delete ${currentPlayer} from your list?`)) {
-        const index = players.map(player => player.name).indexOf(currentPlayer);
-        let newArr = JSON.parse(localStorage.getItem("Players"));
-        newArr.splice(index, 1);
-        localStorage.setItem("Players", JSON.stringify(newArr));
-        location.reload();
-        console.log("Player deleted");
+    if(currentPlayer == undefined) {
+        alert("You need to choose a player first");
     } else {
-        console.log("Player was not deleted");
+        if(confirm(`Are you sure you want to delete ${currentPlayer} from your list?`)) {
+            const index = players.map(player => player.name).indexOf(currentPlayer);
+            let newArr = JSON.parse(localStorage.getItem("Players"));
+            newArr.splice(index, 1);
+            localStorage.setItem("Players", JSON.stringify(newArr));
+            location.reload();
+            console.log("Player deleted");
+        } else {
+            console.log("Player was not deleted");
+        }
     }
 }
 
