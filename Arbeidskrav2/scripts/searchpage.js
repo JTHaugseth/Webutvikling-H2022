@@ -27,9 +27,12 @@ searchButton.onclick = () => {
         let htmlTxt = "";
     
         newArr.forEach(player => {
-            htmlTxt += `        <div class="col-md-4">
+
+            htmlTxt += `        
+                                
+                                <div class="col-md-4 col-sm-6">
                                 <article class="playerCard">
-                                <h2 >${player.name}</h2>
+                                <h2>${player.name}</h2>
                                 <img class="img-fluid" src="${player.imgSrc}" alt= "Picture of: ${player.name}">
                                 <p>Rating: ${player.rating}</p>
                                 <p>${player.origin}</p>

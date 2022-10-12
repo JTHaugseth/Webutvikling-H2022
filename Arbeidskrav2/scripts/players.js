@@ -3,7 +3,7 @@ const playersArray = [
         id: 1,
         name: 'Haaland',
         rating: 99,
-        imgSrc: './images/haaland.webp',
+        imgSrc: './images/haaland.png',
         origin: 'Norway',
         league: 'Premier League',
         club: 'Manchester City',
