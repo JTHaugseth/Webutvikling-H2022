@@ -49,7 +49,7 @@ window.onclick = e => {
 
 deleteBtn.onclick = () => {
     if(currentPlayer == undefined) {
-        alert("You need to choose a player first");
+        alert("You have to choose a player first!");
     } else {
         if(confirm(`Are you sure you want to delete ${currentPlayer} from your list?`)) {
             const index = players.map(player => player.name).indexOf(currentPlayer);
@@ -62,6 +62,10 @@ deleteBtn.onclick = () => {
             console.log("Player was not deleted");
         }
     }
+}
+
+updateBtn = () => {
+    
 }
 
 
