@@ -22,7 +22,6 @@ button.onclick = () => {
         output.innerHTML = "Remember to fill out all fields"
     } else {
         let newPlayer = {
-            id: (storedArray.length + 1),
             name: getName,
             rating: getRating,
             imgSrc: getPicture,

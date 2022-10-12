@@ -1,6 +1,5 @@
 const playersArray = [
     {
-        id: 1,
         name: 'Haaland',
         rating: 99,
         imgSrc: './images/haaland.png',
@@ -9,7 +8,6 @@ const playersArray = [
         club: 'Manchester City',
     },
     {
-        id: 2,
         name: 'Richarlison',
         rating: 97,
         imgSrc: './images/richarlison.png',
@@ -18,7 +16,6 @@ const playersArray = [
         club: 'Spurs',
     },
     {
-        id: 3,
         name: 'Koulibaly',
         rating: 98,
         imgSrc: './images/koulibaly.png',
@@ -27,7 +24,6 @@ const playersArray = [
         club: 'Chelsea',
     },
     {
-        id: 4,
         name: 'Ketelaere',
         rating: 96,
         imgSrc: './images/ketelaere.png',
@@ -36,7 +32,6 @@ const playersArray = [
         club: 'Milan',
     },
     {
-        id: 5,
         name: 'Ronaldo',
         rating: 96,
         imgSrc: './images/ronaldo.png',
@@ -45,7 +40,6 @@ const playersArray = [
         club: 'Manchester United',
     },
     {
-        id: 6,
         name: 'Messi',
         rating: 99,
         imgSrc: './images/messi.png',
@@ -54,7 +48,6 @@ const playersArray = [
         club: 'PSG',
     },
     {
-        id: 7,
         name: 'Sterling',
         rating: 84,
         imgSrc: './images/sterling.png',
@@ -63,7 +56,6 @@ const playersArray = [
         club: 'Chelsea',
     },
     {
-        id: 8,
         name: 'Zlatan',
         rating: 82,
         imgSrc: './images/zlatan.png',
