@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(250, 184, 98);
+}
 img {
     max-height: 200px;
 }
@@ -6,20 +8,12 @@ p {
     font-size: 100%;
     border-top: 2px solid white;
 }
-
-.playerCard:hover {
-    transform: scale(1.1);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+h2:hover {
+    background-color: rgb(86, 86, 252);
 }
-
-.playerCard::after {
-    
+h2:active {
+    background-color: rgb(86, 86, 252);
 }
-
-h2 {
-    border-bottom: 1px solid black;
-}
-
 .playerCard {
     background-color: grey;
     border: 1px solid black;

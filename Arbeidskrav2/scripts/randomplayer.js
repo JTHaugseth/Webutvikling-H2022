@@ -1,26 +1,29 @@
 import retrieveAllPlayers from "./players.js"
 
-const randomButton = document.getElementById("search-button");
-const output = document.getElementById("output-main");
-const players = retrieveAllPlayers.getAllPlayers();
+const randomButton = document.getElementById("randomBtn");
+const output = document.getElementById("output");
 
-searchButton.onclick = () => {
 
-    let randomPlayer = Math.floor(mMath.random()*newArr.size);
-    let newArr = [];
+randomButton.onclick = () => {
+    let array = JSON.parse(localStorage.getItem("Players"));
+    let randomPlayer = Math.floor(Math.random()*array.length +1);
         
-        if (player.id == randomPlayer) {
+       console.log(randomPlayer)
+
+        
+
+        /*if (player.id == randomPlayer) {
             newArr.push(player);
-        }
+        }*/
              
                 
 
-
-    const printAllPlayers = (newArr)=>{
+        /*
+    const printAllPlayers = (array)=>{
     
         let htmlTxt = "";
     
-        newArr.forEach(player => {
+        array.forEach(player => {
 
             htmlTxt += `        
                                 
@@ -41,9 +44,9 @@ searchButton.onclick = () => {
     
      (
         ()=>{
-            printAllPlayers(newArr)
+            printAllPlayers(array)
         }
-     )();
+     )();*/
 
 
     
