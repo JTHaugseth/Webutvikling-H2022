@@ -79,14 +79,30 @@ updateBtn.onclick = () => {
         alert("You have to choose a player first!");
     } else {
         const updatePlayer = players.filter(player => player.name == currentPlayer);
-        localStorage.setItem("updatePlayer", JSON.stringify(updatePlayer));
+        const index = players.map(player => player.name).indexOf(currentPlayer);
+        updateContainer.style.visibility = "visible";
 
-        output.innerHTML = "";
-       
+        exitUpdateBtn.onclick = () => {
+            let newName = updateName.value;
+            let newRating = updateRating.value;
+            let newImage = updateImage.value;
+            let newCountry = updateCountry.value;
+            let newLeague = updateLeague.value;
+            let newClub = updateClub.value;
 
+            if(newName != "") {updatePlayer[0].name = newName;}
+            if(newRating != NaN && (newRating <= 100 && newRating >= 0)) {updatePlayer[0].rating = newRating;}
+            if(newImage != "") {updatePlayer[0].imgSrc = newImage;}
+            if(newCountry != "") {updatePlayer[0].origin = newCountry;}
+            if(newLeague != "") {updatePlayer[0].league = newLeague;}
+            if(newClub != "") {updatePlayer[0].club = newClub;}
+
+            let newArr = JSON.parse(localStorage.getItem("Players"));
+            newArr.splice(index, 1);
+            newArr.push(...updatePlayer);
+            localStorage.setItem("Players", JSON.stringify(newArr));
+            location.reload();
+        }
     }
 }
-
-
-
 
