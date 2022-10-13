@@ -91,7 +91,7 @@ updateBtn.onclick = () => {
             let newClub = updateClub.value;
 
             if(newName != "") {updatePlayer[0].name = newName;}
-            if(newRating != NaN && (newRating <= 100 && newRating >= 0)) {updatePlayer[0].rating = newRating;}
+            if(newRating != NaN && (newRating <= 99 && newRating >= 1)) {updatePlayer[0].rating = newRating;}
             if(newImage != "") {updatePlayer[0].imgSrc = newImage;}
             if(newCountry != "") {updatePlayer[0].origin = newCountry;}
             if(newLeague != "") {updatePlayer[0].league = newLeague;}
