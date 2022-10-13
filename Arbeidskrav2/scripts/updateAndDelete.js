@@ -6,6 +6,16 @@ const output = document.getElementById("output");
 const currentPlayerOutput = document.getElementById("currentPlayerOutput");
 const players = retrieveAllPlayers.getAllPlayers();
 
+const updateContainer = document.getElementById("updateContainer");
+const updateName = document.getElementById("update-name");
+const updateRating = document.getElementById("update-rating");
+const updateImage = document.getElementById("update-image");
+const updateCountry = document.getElementById("update-origin");
+const updateLeague = document.getElementById("update-league");
+const updateClub = document.getElementById("update-club");
+const exitUpdateBtn = document.getElementById("exit-update-button")
+
+updateContainer.style.visibility = "hidden";
 
 const printAllPlayers = (players)=>{
     
@@ -64,8 +74,17 @@ deleteBtn.onclick = () => {
     }
 }
 
-updateBtn = () => {
-    
+updateBtn.onclick = () => {
+    if(currentPlayer == undefined) {
+        alert("You have to choose a player first!");
+    } else {
+        const updatePlayer = players.filter(player => player.name == currentPlayer);
+        localStorage.setItem("updatePlayer", JSON.stringify(updatePlayer));
+
+        output.innerHTML = "";
+       
+
+    }
 }
 
 
