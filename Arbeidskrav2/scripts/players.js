@@ -1,3 +1,4 @@
+// Starting players.
 const playersArray = [
     {
         name: 'Haaland',
@@ -65,14 +66,15 @@ const playersArray = [
     },
 ];
 
+// If localStorage is empty, we add our own players from the array above.
 if (localStorage.getItem("Players")) {
     console.log("Localstorage exists");
 } else {
     localStorage.setItem("Players", JSON.stringify(playersArray));
 }
 
+// The function under exports our localStorage to other scripts in our file.  
 let retrieveAllPlayers = ( function() {
-
     const storedArray = JSON.parse(localStorage.getItem("Players"));
 
 const getAllPlayers = () => {
@@ -80,7 +82,7 @@ const getAllPlayers = () => {
 }
 
 return{getAllPlayers}
-
 }());
 
+//exports players module to other js scripts.
 export default retrieveAllPlayers;

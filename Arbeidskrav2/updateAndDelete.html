@@ -4,31 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update and Delete</title>
     
+    <!-- FontAwesome-import -->
     <script src="https://kit.fontawesome.com/49e1b327a3.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap-import -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type= "text/css" href="./CSS/updateAndDelete.css">
-    <title>Document</title>
-   
-<body>
-<header>
-    
 
-    <div class="container">
-    <h1>Click on a players name, then either delete or update!</h1> 
-    <p>When you update players they are placed at the bottom of the page. </p>
-</header>
-<div class="bg-image" id="midbackground">
-<div  class="container px-5">
-    <input class="btn btn-danger" type="button" id="delete-btn" value="Delete">
-    <input class="btn btn-success" type="button" id="update-btn" value="Update">
-    <a href="./showAll.html"><i class="fa-solid fa-house-user"></a></i>
-    <p id="currentPlayerOutput"></p>
+    <!-- CSS-link -->
+    <link rel="stylesheet" type= "text/css" href="./CSS/updateAndDelete.css">
+    
+</head>
+<body class="text-black">
+    
+    <!-- Header text -->
+    <header>
+        <div class="container text-white">
+        <h1>Click on a players name, then either delete or update!</h1> 
+        <p>When you update players they are placed at the bottom of the page. </p>
+    </header>
+    
+    <!-- Header-inputs -->
+    <div class="bg-image">
+        <div  class="container px-5">
+            <input class="btn btn-danger" type="button" id="delete-btn" value="Delete">
+            <input class="btn btn-success" type="button" id="update-btn" value="Update">
+            <a href="./showAll.html"><i class="fa-solid fa-house-user"></a></i>
+            <p id="currentPlayerOutput"></p>
+        </div>
+    </div>
+    
+    <!-- Update-inputs (Will show when you choose a player and click update) -->
     <div id="updateContainer">
         <input type="text" id="update-name" placeholder="Update Name">
         <input type="text" id="update-rating" placeholder="Update Rating">
@@ -36,14 +48,14 @@
         <input type="text" id="update-origin" placeholder="Update Country">
         <input type="text" id="update-league" placeholder="Update League">
         <input type="text" id="update-club" placeholder="Update Club">
-        <input type="button" id="exit-update-button" value="Save">
+        <input type="button" id="exit-update-button" class="btn btn-success" value="Save">
     </div>
-    <div class="row gx-5" id="output"></div>
-</div></div>
-<div class="container-fluid" id="logo-backgroundColor" ><img src="./Images/Gruppelogov2utenundertekst.png" class="rounded float-left" alt="logo" id="logo"></div>
     
+    <!-- Output where all the player-cards show -->
+    <div class="row gx-5" id="output"></div>
+
+    <!-- Script-link -->
     <script type="module" src="scripts\updateAndDelete.js"></script>
     
-
 </body>
 </html>

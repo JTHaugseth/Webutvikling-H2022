@@ -1,11 +1,14 @@
+//imports players from players.js.
 import retrieveAllPlayers from "./players.js"
 
+//HTML-elements
 const deleteBtn = document.getElementById("delete-btn");
 const updateBtn = document.getElementById("update-btn");
 const output = document.getElementById("output");
 const currentPlayerOutput = document.getElementById("currentPlayerOutput");
 const players = retrieveAllPlayers.getAllPlayers();
 
+//HTML-elements (This is the update elements. Hidden until update-button is pressed).
 const updateContainer = document.getElementById("updateContainer");
 const updateName = document.getElementById("update-name");
 const updateRating = document.getElementById("update-rating");
@@ -17,14 +20,12 @@ const exitUpdateBtn = document.getElementById("exit-update-button")
 
 updateContainer.style.visibility = "hidden";
 
+//Prints all players.
 const printAllPlayers = (players)=>{
-    
     let htmlTxt = "";
 
     players.forEach(player => {
-
-        htmlTxt += `        
-                            
+        htmlTxt += `           
                             <div class="col-md-4 col-sm-6">
                             <article class="playerCard">
                             <h2>${player.name}</h2>
@@ -37,7 +38,6 @@ const printAllPlayers = (players)=>{
                     </article>`;
     });
     output.innerHTML = htmlTxt;
-
 }
 
 (
@@ -46,8 +46,10 @@ const printAllPlayers = (players)=>{
     }
 )();
 
+//This variable keeps track of the users current-selected-player.
 let currentPlayer;
 
+//This function tracks where the user clicks on screen. If the click-value matches a player-name in our localStorage, it sets the currentPlayer-variable to the click-value.
 window.onclick = e => {
     players.forEach(player => {
         if(e.target.innerText == player.name) {
@@ -57,6 +59,7 @@ window.onclick = e => {
     });
 }
 
+//This function checks if user has chosen a player, confirms that the user wants to delete the player and lastly deletes the player.
 deleteBtn.onclick = () => {
     if(currentPlayer == undefined) {
         alert("You have to choose a player first!");
@@ -74,6 +77,7 @@ deleteBtn.onclick = () => {
     }
 }
 
+//This function checks if the user has chosen a player and prints input fields where the user can update information of choice.
 updateBtn.onclick = () => {
     if(currentPlayer == undefined) {
         alert("You have to choose a player first!");

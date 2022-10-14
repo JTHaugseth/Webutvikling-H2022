@@ -1,10 +1,13 @@
+//importing module from players.js.
 import retrieveAllPlayers from "./players.js"
 
+//Html-elements.
 const keyword = document.getElementById("input-keyword");
 const searchButton = document.getElementById("search-button");
 const output = document.getElementById("output-main");
 const players = retrieveAllPlayers.getAllPlayers();
 
+//Function below takes user input to print players.
 searchButton.onclick = () => {
 
     let newArr = [];
@@ -50,10 +53,6 @@ searchButton.onclick = () => {
             printAllPlayers(newArr)
         }
      )();
-
-
-    
-    
 }
 
 
