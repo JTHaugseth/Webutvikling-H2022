@@ -38,7 +38,3 @@ button.onclick = () => {
     }
     localStorage.setItem("Players", JSON.stringify(storedArray));
 }
-
-
-
-

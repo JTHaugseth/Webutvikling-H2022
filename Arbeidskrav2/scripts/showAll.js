@@ -31,4 +31,3 @@ const printAllPlayers = (players)=>{
         printAllPlayers(players)
     }
  )();
-

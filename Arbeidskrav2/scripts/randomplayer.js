@@ -29,5 +29,3 @@ randomButton.onclick = () => {
         }
     )();    
 };
-
-
