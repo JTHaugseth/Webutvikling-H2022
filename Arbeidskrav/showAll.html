@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekstremt episk arbeidskrav!</title>
-    <link rel="stylesheet" type= "text/css" href="CSS/ShowAll.css">
-<body>
-  
-
-    <!-- Husk å add COL - Spør Julian -->
-    <div>
-        <main id='Output-main' class="output"></main>
-    </div>
-
-
-
-    <!-- Importing players -->
-    <script type="module" defer src="scripts/players.js"></script>
-    <script type ="module" src="scripts/showPlayers.js"></script>
+    <title>Mainpage</title>
     
+    <!-- CSS-link -->
+    <link rel="stylesheet" type= "text/css" href="CSS/showAll.css">
+    
+</head>
+<body>
 
+    <!-- Navigationbar -->
+    <nav id="nav"> 
+      <ul id="navList">
+        <li><a href="Searchpage.html">Search Page</a></li>
+        <li><a href="Savenew.html">Save new player</a></li>
+        <li><a href="updateAndDelete.html">Update and delete</a></li>
+        <li><a href="Showrandomplayer.html">Show random player</a></li>
+      </ul>
+    </nav>
+
+    <!-- Output where all the player-cards show -->
+    <div class="container">
+      <div class="row"><section id="output-main"></section></div></div>
+      
+    <!-- Script-link -->
+    <script type="module" defer src="scripts/players.js"></script>
+    <script type="module" src="scripts/showAll.js"></script>
+    
 </body>
 </html>
