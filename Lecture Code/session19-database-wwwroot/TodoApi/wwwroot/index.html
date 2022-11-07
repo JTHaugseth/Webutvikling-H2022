@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" 
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .book-box{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <div id="output-books"></div>    
+    <div>
+        <h3>Delete A Book</h3>
+        <div>
+            <input type="text" id="delete-book-Id" placeholder="Enter the Book Id"></input>
+        </div>                
+        <button id="delete-book-btn" onClick={deleteBook}>Delete</button>
+    </div>
+    <script>
+        const outputBooks = document.getElementById("output-books");
+        const getAllBooks = async ()=>{
+            try{
+                const response = await axios.get("https://localhost:7192/api/newbook")
+                const allBooks = response.data;
+                return allBooks;
+            } catch (errors) {
+                console.error(errors)
+            }
+        }
+        const generateHTML =(allBooks)=>{
+            let htmlTxt="";
+            allBooks.forEach(book => {
+                htmlTxt +=`
+                <article class="book-box">
+                    <p>Book ID: ${book.id}</p>
+                    <p>Book Name: ${book.name}</p>
+                    <p>Book Price:${book.price}</p>
+                    <p>Book Category: ${book.category}</p>
+                    <p>Book Author: ${book.author}</p>
+                </article>
+                `;
+            });
+            outputBooks.innerHTML=htmlTxt;
+        }
+
+        const deleteBookId = document.getElementById("delete-book-Id");
+        const deleteBookBtn = document.getElementById("delete-book-btn");
+        const deleteBook = async ()=>{
+            const id= deleteBookId.value;
+            try{
+                const response = await axios.delete(`https://localhost:7192/api/newbook/${id}`)
+              } catch (errors) {
+                console.error(errors)
+            }
+            const allBooks = await getAllBooks();
+            generateHTML(allBooks);
+        }
+       deleteBookBtn.addEventListener("click", ()=>deleteBook());
+       (async ()=>{
+            const allBooks = await getAllBooks();
+            generateHTML(allBooks);
+       })();
+
+    </script>
+    
+</body>
+</html>

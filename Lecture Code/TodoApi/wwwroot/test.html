@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <style>
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <div>
+        <p>Delete Id:</p>
+        <div>
+            <input type="text" id="delete-book-id" placeholder="enter the book id"></input>
+        </div>
+        <button id="delete-book-btn">Delete</button>
+    </div>
+
+    <script>
+        const output = document.getElementById("output")
+        const deleteBookId= document.getElementById("delete-book-id");
+        const deleteBookBtn= document.getElementById("delete-book-btn");
+        
+        const deleteBook = async()=>{
+            const id= deleteBookId.value;
+            try{
+                const response = await axios.delete(`https://localhost:7192/api/books/${id}`);
+            }catch(error){
+                console.error(error)
+            }
+        }
+        const getAllBooks = async()=>{
+            try{
+                const response = await axios.get("https://localhost:7192/api/books");
+                const allBooks = response.data;
+                return allBooks;
+            }catch(error){
+                console.error(error)
+            }
+        }
+        const generateHtml=(allBooks)=>{
+            let htmlTxt="";
+            allBooks.forEach(book=>{
+                htmlTxt+=`
+                <article class="book-grid">
+                    <p>Book ID: ${book.id}</p>
+                    <p>Book Name: ${book.bookName}</p>
+                    <p>Book Category: ${book.category}</p>
+                    <p>Book Price: ${book.price}</p>
+                    <p>Book Author: ${book.author}</p>
+                </article>
+                `
+            })
+            output.innerHTML=htmlTxt;
+        }
+        deleteBookBtn.addEventListener("click", async ()=>deleteBook());
+        (async ()=>{
+            const allBooks = await getAllBooks();
+            generateHtml(allBooks);
+        })();
+    </script>
+</body>
+</html>

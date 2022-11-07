@@ -1,0 +1,15 @@
+/Users/dnductien/Projects/CSharp/NewHangman/bin/Debug/net6.0/NewHangman
+/Users/dnductien/Projects/CSharp/NewHangman/bin/Debug/net6.0/NewHangman.deps.json
+/Users/dnductien/Projects/CSharp/NewHangman/bin/Debug/net6.0/NewHangman.runtimeconfig.json
+/Users/dnductien/Projects/CSharp/NewHangman/bin/Debug/net6.0/NewHangman.dll
+/Users/dnductien/Projects/CSharp/NewHangman/bin/Debug/net6.0/NewHangman.pdb
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.csproj.AssemblyReference.cache
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.AssemblyInfoInputs.cache
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.AssemblyInfo.cs
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.csproj.CoreCompileInputs.cache
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.dll
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/refint/NewHangman.dll
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.pdb
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.genruntimeconfig.cache
+/Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/ref/NewHangman.dll
