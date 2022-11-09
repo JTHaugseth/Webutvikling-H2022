@@ -13,3 +13,18 @@
 /Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.pdb
 /Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/NewHangman.genruntimeconfig.cache
 /Users/dnductien/Projects/CSharp/NewHangman/obj/Debug/net6.0/ref/NewHangman.dll
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\bin\Debug\net6.0\NewHangman.exe
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\bin\Debug\net6.0\NewHangman.deps.json
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\bin\Debug\net6.0\NewHangman.runtimeconfig.json
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\bin\Debug\net6.0\NewHangman.dll
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\bin\Debug\net6.0\NewHangman.pdb
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.csproj.AssemblyReference.cache
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.AssemblyInfoInputs.cache
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.AssemblyInfo.cs
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.csproj.CoreCompileInputs.cache
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.dll
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\refint\NewHangman.dll
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.pdb
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\NewHangman.genruntimeconfig.cache
+C:\Users\Julian\Documents\GitHub\Webutvikling-H2022\Lecture Code\NewHangman\obj\Debug\net6.0\ref\NewHangman.dll

@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/dnductien/.nuget/packages/": {}
+    "C:\\Users\\Julian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dnductien/Projects/CSharp/NewHangman/NewHangman.csproj",
+      "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Webutvikling-H2022\\Lecture Code\\NewHangman\\NewHangman.csproj",
       "projectName": "NewHangman",
-      "projectPath": "/Users/dnductien/Projects/CSharp/NewHangman/NewHangman.csproj",
-      "packagesPath": "/Users/dnductien/.nuget/packages/",
-      "outputPath": "/Users/dnductien/Projects/CSharp/NewHangman/obj/",
+      "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Webutvikling-H2022\\Lecture Code\\NewHangman\\NewHangman.csproj",
+      "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Webutvikling-H2022\\Lecture Code\\NewHangman\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dnductien/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
