@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "OSFnA5uN5UWTnwMIGLjTygooxCSNIly3NTsX/Ff4USY=",
+  "Source": "BookStoreApi",
+  "BasePath": "_content/BookStoreApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BookStoreApi\\wwwroot",
+      "Source": "BookStoreApi",
+      "ContentRoot": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\",
+      "BasePath": "_content/BookStoreApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\images\\clean code.png",
+      "SourceId": "BookStoreApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\",
+      "BasePath": "_content/BookStoreApi",
+      "RelativePath": "images/clean code.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\clean code.png"
+    },
+    {
+      "Identity": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\images\\design patterns.png",
+      "SourceId": "BookStoreApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\",
+      "BasePath": "_content/BookStoreApi",
+      "RelativePath": "images/design patterns.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\design patterns.png"
+    },
+    {
+      "Identity": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\index.html",
+      "SourceId": "BookStoreApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\gitprojects\\dotnetprojects\\BookStoreApi\\wwwroot\\",
+      "BasePath": "_content/BookStoreApi",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

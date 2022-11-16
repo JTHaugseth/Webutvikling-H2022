@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" 
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body{
+          font-family: 'Courier New', Courier, monospace;
+        }
+        header{
+          background-color: gray;
+          color: white;
+          text-align: center;
+          padding: 30px;
+          font-size: 20px;
+        }
+        footer{
+          background-color: gray;
+          padding: 5px;
+          font-size: 10px;
+          text-align: center;
+          color: lightpink;
+        }
+        section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 150px;
+        }   
+    
+        #articleheader {
+          color: pink;
+        }
+        h2 {
+            color: rosybrown;
+        }
+    </style>
+</head>
+<body>  
+    <header>
+      <h2>Hello Web developers!</h2>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <li><a ref="#">Home</a></li>
+          <li><a ref="#">Content</a></li>
+          <li><a ref="#">About</a></li>
+          <li><a ref="#">Contact</a></li>
+        </ul>
+      </nav>
+      <article>
+        <h2 id="articleheader">Game Factory</h2>
+        <p>This is the main information about Game Factory</p>
+      </article>
+    </section>
+    <footer>
+      <h2>Contact info: yuan.lin@kristiania.no</h2>
+    </footer>
+  </body>
+</html>
